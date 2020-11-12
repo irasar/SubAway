@@ -6,7 +6,9 @@ function Home () {
     return(
         <div>
             <Navbar />
-           <Jumbotron /> 
+           <Jumbotron />
+
+           
         </div>
         
         
