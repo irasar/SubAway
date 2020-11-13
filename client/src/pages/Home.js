@@ -1,17 +1,19 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron"
+import LoginButton from "../components/LoginButton";
+import LogoutButton from "../components/LogoutButton";
 import Navbar from "../components/Navbar"
 
-function Home () {
-    return(
+function Home() {
+    return (
         <div>
             <Navbar />
-           <Jumbotron />
-
-           
+            <Jumbotron />
+            <LoginButton />
+            <LogoutButton />
         </div>
-        
-        
+
+
     )
 }
 
