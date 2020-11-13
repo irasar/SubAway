@@ -5,6 +5,7 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
+    "axios": "^0.21.0",
     "mdbreact": "^4.27.0",
     "mongoose": "^5.10.14",
     "react": "^16.6.3",
