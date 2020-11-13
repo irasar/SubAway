@@ -5,8 +5,8 @@ function Subscription() {
     <div>
       <p>Type</p>
       <p>Title</p>
-      <p>amount</p>
-      <p>due date</p>
+      <p>Amount</p>
+      <p>Due date</p>
     </div>
   );
 }
