@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
     findAllSubs: function (req, res) {
-        db.Subscription.find(req.query)
+        db.Subscription.find()
             .then(subscriptions => res.json(subscriptions))
             .catch(err => res.status(422).json(err));
     },
@@ -28,12 +28,12 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findUser: function (res, res) {
-        db.User.findById(req.params.id)
+        db.User.findById({ auth0ID: req.params.id })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
     },
     createUser: function (req, res) {
-        db.User.create(req.body)
+        db.User.create({ auth0ID: req.params.id })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
     }
