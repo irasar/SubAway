@@ -6,6 +6,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
     "mdbreact": "^4.27.0",
+    "mongoose": "^5.10.14",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.2.0",
