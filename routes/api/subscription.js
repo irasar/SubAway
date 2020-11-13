@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const subscriptionsController = require("../../controllers/subscriptionsController");
+const subscriptionsController = require("../../controllers/subscriptionController");
 
 // Matches with "/api/subscriptions"
 router.route("/")
-  .get(subscriptionsController.findAll)
-  .post(subscriptionsController.create);
+  .get(subscriptionsController.findAllSubs)
+  .post(subscriptionsController.createSub);
 
 // Matches with "/api/subscriptions/:id"
 router
   .route("/:id")
-  .get(subscriptionsController.findById)
-  .put(subscriptionsController.update)
-  .delete(subscriptionsController.remove);
+  .get(subscriptionsController.findOneSub)
+  .put(subscriptionsController.updateSub)
+  .delete(subscriptionsController.removeSub);
 
 module.exports = router;
