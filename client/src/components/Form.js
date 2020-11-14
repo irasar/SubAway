@@ -1,11 +1,11 @@
 import React from "react";
 
-const Form = () => {
+function Form ({ handleInputChange }) {
   return (
     <>
-      <input class="form-control form-control" type="text" placeholder=".form-control-lg" name=""/>
-      <input class="form-control" type="text" placeholder="Default input" name=""/>
-      <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" name=""/>
+      <input onChange={handleInputChange} class="form-control form-control" type="text" placeholder="title" name="title"/>
+      <input onChange={handleInputChange} class="form-control" type="text" placeholder="type" name="type"/>
+      <input onChange={handleInputChange} class="form-control form-control-sm" type="text" placeholder="amount" name="amount"/>
     </>
   );
 };
