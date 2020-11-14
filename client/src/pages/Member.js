@@ -9,7 +9,7 @@ function Member() {
     const [formInput, setFormInput] = useState({});
 
 
-    function displaySubs() {
+    function getSubs() {
         API.findAllSubs()
             .then(res => setSubs(res))
             .catch(err => console.log(err));
@@ -28,7 +28,7 @@ function Member() {
                 type: formInput.type,
                 amount: formInput.amount
             })
-                .then(res => displaySubs())
+                .then(res => getSubs())
                 .catch(err => console.log(err));
         }
         else {
@@ -52,7 +52,7 @@ function Member() {
 
             <div className="row">
                 <div className="col-md-6 mx-auto">
-                    <Form handleInputChange={handleInputChange} />
+                    <Form handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
                     <p>{formInput.title}</p>
                     <p>{formInput.type}</p>
                     <p>{formInput.amount}</p>
@@ -62,7 +62,14 @@ function Member() {
 
             <div className="row">
                 <div className="col-md-8 mx-auto text-center">
-                    Subscriptions
+                    <p>Subscriptions</p>
+                    {subs.map(sub => (
+                        <>
+                        <p>{sub.title}</p>
+                        <p>{sub.type}</p>
+                        <p>{sub.amount}</p>
+                        </>
+                    ))}
                 </div>
             </div>
         </div>

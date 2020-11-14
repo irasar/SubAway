@@ -5,8 +5,8 @@ export default {
     findAllSubs: function () {
         return axios.get("/api/subscriptions");
     },
-    createSub: function () {
-        return axios.post("/api/subscriptions");
+    createSub: function (sub) {
+        return axios.post("/api/subscriptions", sub);
     },
     findOneSub: function (id) {
         return axios.get("/api/subscriptions/" + id)
