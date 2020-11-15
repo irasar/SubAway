@@ -1,11 +1,17 @@
 import React from "react";
 
-const Form = () => {
+function Form({ handleInputChange, handleFormSubmit }) {
   return (
     <>
-      <input class="form-control form-control" type="text" placeholder=".form-control-lg" name=""/>
-      <input class="form-control" type="text" placeholder="Default input" name=""/>
-      <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" name=""/>
+      <input onChange={handleInputChange} className="form-control form-control" type="text" placeholder="title" name="title" />
+      <select onChange={handleInputChange} className="form-control">
+        <option>Default select</option>
+        <option>Default select</option>
+        <option>Default select</option>
+        <option>Default select</option>
+      </select>
+      <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="amount" name="amount" />
+      <button onClick={handleFormSubmit} type="button" className="btn btn-success">Submit</button>
     </>
   );
 };
