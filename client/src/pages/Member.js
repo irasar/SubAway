@@ -2,14 +2,17 @@ import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
 import Navbar from "../components/Navbar";
 import API from "../utils/API";
+import { useAuth0, UseAuth0 } from "@auth0/auth0-react"
 
 function Member() {
 
+    const { user } = useAuth0();
     const [subs, setSubs] = useState([]);
     const [formInput, setFormInput] = useState({});
 
     useEffect(() => {
         getSubs()
+        console.log(user);
     }, [])
 
     function getSubs() {
