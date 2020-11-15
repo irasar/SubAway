@@ -8,10 +8,16 @@ function Member() {
     const [subs, setSubs] = useState([]);
     const [formInput, setFormInput] = useState({});
 
+    useEffect(() => {
+        getSubs()
+    }, [])
 
     function getSubs() {
         API.findAllSubs()
-            .then(res => setSubs(res))
+            .then(res => {
+                console.log(res.data);
+                setSubs(res.data);
+            })
             .catch(err => console.log(err));
     };
 
@@ -23,13 +29,11 @@ function Member() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formInput.title && formInput.type && formInput.amount) {
-            API.createSub({
-                title: formInput.title,
-                type: formInput.type,
-                amount: formInput.amount
-            })
-                .then(res => getSubs())
-                .catch(err => console.log(err));
+            API.createSub(
+                formInput
+            )
+            .then(res => getSubs())
+            .catch(err => console.log(err));
         }
         else {
             alert("Please answer all of the questions");
@@ -64,11 +68,11 @@ function Member() {
                 <div className="col-md-8 mx-auto text-center">
                     <p>Subscriptions</p>
                     {subs.map(sub => (
-                        <>
-                        <p>{sub.title}</p>
-                        <p>{sub.type}</p>
-                        <p>{sub.amount}</p>
-                        </>
+                        <div key={sub._id}>
+                            <p>{sub.title}</p>
+                            <p>{sub.type}</p>
+                            <p>{sub.amount}</p>
+                        </div>
                     ))}
                 </div>
             </div>

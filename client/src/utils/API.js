@@ -6,6 +6,7 @@ export default {
         return axios.get("/api/subscriptions");
     },
     createSub: function (sub) {
+        console.log(sub);
         return axios.post("/api/subscriptions", sub);
     },
     findOneSub: function (id) {
@@ -18,9 +19,9 @@ export default {
         return axios.delete("/api/subscriptions/" + id)
     },
     findUser: function (id) {
-        return axios.get("/api/user/:id");
+        return axios.get("/api/user/" + id);
     },
     createUser: function (id) {
-        return axios.post("/api/user/:id");
+        return axios.post("/api/user/" + id);
     }
 }
