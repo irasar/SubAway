@@ -25,6 +25,7 @@ function Member() {
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
+    
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -67,7 +68,7 @@ function Member() {
             <div className="row">
                 <div className="col-md-8 mx-auto text-center">
                     <p>Subscriptions</p>
-                    {subs.map(sub => (
+                    {subs.slice(0).reverse().map(sub => (
                         <div key={sub._id}>
                             <p>{sub.title}</p>
                             <p>{sub.type}</p>
