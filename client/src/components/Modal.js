@@ -21,11 +21,11 @@ render() {
         <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
           <MDBModalHeader toggle={this.toggle(14)}>New Subscription</MDBModalHeader>
           <MDBModalBody>
-          <Form handleInputChange={this.props.handleInputChange} handleFormSubmit={this.props.handleFormSubmit} />
+          <Form handleInputChange={this.props.handleInputChange} />
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn color="secondary" onClick={this.toggle(14)}>Close</MDBBtn>
-            <MDBBtn color="primary">Save changes</MDBBtn>
+            <MDBBtn onClick={this.props.handleFormSubmit} color="primary">Submit</MDBBtn>
           </MDBModalFooter>
         </MDBModal>
       </MDBContainer>
