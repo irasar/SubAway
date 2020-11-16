@@ -28,12 +28,15 @@ module.exports = {
             .then(subscriptions => res.json(subscriptions))
             .catch(err => res.status(422).json(err));
     },
-    findUser: function (res, res) {
-        db.User.findById({ auth0ID: req.params.id })
+    findUser: function (req, res) {
+        console.log("finding user");
+        console.log(req.params.id);
+        db.User.findOne({ auth0ID: req.params.id })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
     },
     createUser: function (req, res) {
+        console.log("creatin user");
         db.User.create({ auth0ID: req.params.id })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
