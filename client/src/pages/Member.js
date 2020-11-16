@@ -3,7 +3,9 @@ import Form from "../components/Form";
 import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
+import ModalPage from "../components/Modal";
 import TablePage from "../components/TablePage";
+
 
 function Member() {
 
@@ -58,31 +60,19 @@ function Member() {
 
     return (
         <div>
-            <FullPageIntroWithFixedTransparentNavbar />
-            <br>
-            </br>
-            <br>
-            </br>
-            <br></br>
-
+    <FullPageIntroWithFixedTransparentNavbar />
+    <br>
+    </br>
+    <br>
+    </br>
+    <br></br>
+    <ModalPage handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
             <div className="row">
                 <div className="col-md-6"></div>
 
                 <div className="col-md-3 offset-3">
                     <p>Your Expenses:</p>
-
                 </div>
-
-            </div>
-
-            <div className="row">
-                <div className="col-md-6 mx-auto">
-                    <Form handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
-                    <p>{formInput.title}</p>
-                    <p>{formInput.type}</p>
-                    <p>{formInput.amount}</p>
-                </div>
-
             </div>
             <div className="row">
                 <div className="col-md-6 mx-auto">

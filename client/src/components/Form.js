@@ -4,7 +4,7 @@ import React from "react";
 function Form({ handleInputChange, handleFormSubmit }) {
   return (
     <>
-      <input onChange={handleInputChange} className="form-control form-control" type="text" placeholder="title" name="title" />
+      <input onChange={handleInputChange} className="form-control form-control" type="text" placeholder="Title" name="title" />
       <select name="type" onChange={handleInputChange} className="form-control">
         <option defaultValue value="Streaming">Streaming</option>
         <option value="Boxes">Boxes</option>
@@ -12,11 +12,11 @@ function Form({ handleInputChange, handleFormSubmit }) {
         <option value="Classes">Classes</option>
         <option value="Software">Software</option>
         <option value="Food">Food</option>
-        <option value="other">other</option>
+        <option value="other">Other</option>
       </select>
-      <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="amount" name="amount" />
+      <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="Amount" name="amount" />
  
-      <button onClick={handleFormSubmit} type="button" className="btn btn-success">Submit</button>
+
     </>
   );
 };
