@@ -12,7 +12,7 @@ function Form({ handleInputChange, handleFormSubmit }) {
         <option value="Classes">Classes</option>
         <option value="Software">Software</option>
         <option value="Food">Food</option>
-        <option value="other">other</option>
+        <option value="other">Other</option>
       </select>
       <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="amount" name="amount" />
  
