@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
-import Navbar from "../components/Navbar";
+import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react"
 
@@ -61,7 +61,7 @@ function Member() {
 
     return (
         <div>
-            <Navbar />
+    <FullPageIntroWithFixedTransparentNavbar />
             <div className="row">
                 <div className="col-md-6"></div>
 
