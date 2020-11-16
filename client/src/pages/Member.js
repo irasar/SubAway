@@ -2,17 +2,29 @@ import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
 import Navbar from "../components/Navbar";
 import API from "../utils/API";
-import { useAuth0, UseAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react"
 
 function Member() {
 
-    const { user } = useAuth0();
     const [subs, setSubs] = useState([]);
     const [formInput, setFormInput] = useState({});
+    const { user, isAuthenticated } = useAuth0();
+
+    if (isAuthenticated) {
+        console.log(user.sub);
+        API.findUser(user.sub)
+            .then(res => console.log("got the user"))
+            .catch(err => {
+                API.createUser(user.sub)
+                    .then(res => {
+                        console.log("creating user");
+                    })
+                    .catch(err => console.log(err));
+            })
+    }
 
     useEffect(() => {
         getSubs()
-        console.log(user);
     }, [])
 
     function getSubs() {
@@ -25,10 +37,11 @@ function Member() {
     };
 
     function handleInputChange(event) {
+        console.log(user);
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
-    
+
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -36,8 +49,8 @@ function Member() {
             API.createSub(
                 formInput
             )
-            .then(res => getSubs())
-            .catch(err => console.log(err));
+                .then(res => getSubs())
+                .catch(err => console.log(err));
         }
         else {
             alert("Please answer all of the questions");
@@ -54,6 +67,7 @@ function Member() {
 
                 <div className="col-md-3 offset-3">
                     <p>Your Expenses:</p>
+
                 </div>
 
             </div>
