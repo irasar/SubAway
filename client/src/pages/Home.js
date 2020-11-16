@@ -1,16 +1,19 @@
 import React from "react";
-import Jumbotron from "../components/Jumbotron"
+import FullPageIntroWithFixedTransparentNavbarx  from "../components/HeroNav"
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
-import Navbar from "../components/Navbar"
+import FullPageIntroWithFixedTransparentNavbar  from "../components/Navbar"
+// import ButtonPage from "../components/Button";
 
 function Home() {
     return (
         <div>
-            <Navbar />
-            <Jumbotron />
+            {/* <ButtonPage /> */}
+            {/* <Navbar /> */}
+            <FullPageIntroWithFixedTransparentNavbarx />
             <LoginButton />
             <LogoutButton />
+         
         </div>
 
 

@@ -44,7 +44,7 @@ function Member() {
 
     return (
         <div>
-            <FullPageIntroWithFixedTransparentNavbar />
+         <FullPageIntroWithFixedTransparentNavbar />
             <div className="row">
                 <div className="col-md-6"></div>
 
