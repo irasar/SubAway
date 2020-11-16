@@ -3,7 +3,7 @@ import Form from "../components/Form";
 import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
-import TablePage from "../components/Box";
+import TablePage from "../components/TablePage";
 
 function Member() {
 
@@ -58,12 +58,12 @@ function Member() {
 
     return (
         <div>
-    <FullPageIntroWithFixedTransparentNavbar />
-    <br>
-    </br>
-    <br>
-    </br>
-    <br></br>
+            <FullPageIntroWithFixedTransparentNavbar />
+            <br>
+            </br>
+            <br>
+            </br>
+            <br></br>
 
             <div className="row">
                 <div className="col-md-6"></div>
@@ -84,9 +84,12 @@ function Member() {
                 </div>
 
             </div>
-            <div className="row"> 
-   <div className="col-md-6 mx-auto"> < TablePage /></div>
-   </div>
+            <div className="row">
+                <div className="col-md-6 mx-auto">
+                    <TablePage subs={subs}/>
+                </div>
+            </div>
+
             <div className="row">
                 <div className="col-md-8 mx-auto text-center">
                     <p>Subscriptions</p>
