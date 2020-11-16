@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
-import Navbar from "../components/Navbar";
+import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
 
 function Member() {
@@ -44,7 +44,7 @@ function Member() {
 
     return (
         <div>
-            <Navbar />
+    <FullPageIntroWithFixedTransparentNavbar />
             <div className="row">
                 <div className="col-md-6"></div>
 
