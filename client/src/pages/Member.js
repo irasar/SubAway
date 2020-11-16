@@ -10,25 +10,16 @@ function Member() {
     const [formInput, setFormInput] = useState({});
     const { user, isAuthenticated } = useAuth0();
 
-    if (isAuthenticated) {
-        console.log(user.sub);
-        API.findUser(user.sub)
-            .then(res => console.log("got the user"))
-            .catch(err => {
-                API.createUser(user.sub)
-                    .then(res => {
-                        console.log("creating user");
-                    })
-                    .catch(err => console.log(err));
-            })
-    }
 
     useEffect(() => {
-        getSubs()
-    }, [])
+        if (isAuthenticated) {
+            console.log(user.sub);
+            getSubs();
+        }
+    }, [isAuthenticated])
 
     function getSubs() {
-        API.findAllSubs()
+        API.findAllSubs(user.sub)
             .then(res => {
                 console.log(res.data);
                 setSubs(res.data);
@@ -37,7 +28,7 @@ function Member() {
     };
 
     function handleInputChange(event) {
-        console.log(user);
+
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
@@ -47,8 +38,13 @@ function Member() {
         event.preventDefault();
         if (formInput.title && formInput.type && formInput.amount) {
             API.createSub(
-                formInput
-            )
+                {
+                    title: formInput.title,
+                    type: formInput.type,
+                    amount: formInput.amount,
+                    userID: user.sub
+
+                })
                 .then(res => getSubs())
                 .catch(err => console.log(err));
         }
@@ -61,7 +57,7 @@ function Member() {
 
     return (
         <div>
-    <FullPageIntroWithFixedTransparentNavbar />
+            <FullPageIntroWithFixedTransparentNavbar />
             <div className="row">
                 <div className="col-md-6"></div>
 

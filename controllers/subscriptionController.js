@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
     findAllSubs: function (req, res) {
-        db.Subscription.find()
+        db.Subscription.find( { userID: req.params.id } )
             .then(subscriptions => res.json(subscriptions))
             .catch(err => res.status(422).json(err));
     },

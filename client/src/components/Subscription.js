@@ -2,7 +2,7 @@ import React from "react";
 
 function Subscription() {
   return (
-    <div>
+    <div id="subs">
       <p>Type</p>
       <p>Title</p>
       <p>Amount</p>

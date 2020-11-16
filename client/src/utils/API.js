@@ -2,8 +2,8 @@ import axios from "axios"
 
 export default {
 
-    findAllSubs: function () {
-        return axios.get("/api/subscriptions");
+    findAllSubs: function (id) {
+        return axios.get("/api/subscriptions/" + id);
     },
     createSub: function (sub) {
         console.log(sub);

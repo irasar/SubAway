@@ -38,7 +38,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
                     <MDBNavLink to="#">Link</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                  <LogoutButton />
+                    <LogoutButton />
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink to="#">Profile</MDBNavLink>
@@ -47,7 +47,7 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               </MDBCollapse>
             </MDBNavbar>
           </Router>
-</header>
+        </header>
       </div>
     );
   }

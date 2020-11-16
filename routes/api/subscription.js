@@ -3,13 +3,14 @@ const subscriptionsController = require("../../controllers/subscriptionControlle
 
 // Matches with "/api/subscriptions"
 router.route("/")
-  .get(subscriptionsController.findAllSubs)
+
   .post(subscriptionsController.createSub);
 
 // Matches with "/api/subscriptions/:id"
 router
   .route("/:id")
-  .get(subscriptionsController.findOneSub)
+  .get(subscriptionsController.findAllSubs)
+  // .get(subscriptionsController.findOneSub)
   .put(subscriptionsController.updateSub)
   .delete(subscriptionsController.removeSub);
 
