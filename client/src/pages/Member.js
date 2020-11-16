@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Form from "../components/Form";
 import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
-import { useAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
+import TablePage from "../components/Box";
 
 function Member() {
 
@@ -62,6 +63,12 @@ function Member() {
     return (
         <div>
     <FullPageIntroWithFixedTransparentNavbar />
+    <br>
+    </br>
+    <br>
+    </br>
+    <br></br>
+
             <div className="row">
                 <div className="col-md-6"></div>
 
@@ -81,7 +88,9 @@ function Member() {
                 </div>
 
             </div>
-
+            <div className="row"> 
+   <div className="col-md-6 mx-auto"> < TablePage /></div>
+   </div>
             <div className="row">
                 <div className="col-md-8 mx-auto text-center">
                     <p>Subscriptions</p>
