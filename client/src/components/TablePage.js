@@ -1,61 +1,42 @@
 import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead  } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
-const TablePage = (props) => {
-  const data_panel  = {
+const TablePage = ({ subs }) => {
+  const data_panel = {
     columns: [
       {
-        'label': 'First Name',
-        'field': 'first',
-        'sort': 'asc'
+        'label': 'Title',
+        'field': 'title',
+
       },
       {
-        'label': 'Last Name',
-        'field': 'last',
-        'sort': 'asc'
+        'label': 'Type',
+        'field': 'type',
       },
       {
-        'label': 'Username',
-        'field': 'username',
-        'sort': 'asc'
+        'label': 'Amount',
+        'field': 'amount',
       },
       {
-        'label': 'Username',
-        'field': 'username2',
-        'sort': 'asc'
+        'label': 'Date',
+        'field': 'date',
       }
     ],
-    rows: [
-      {
-        'first': 'Mark',
-        'last': 'Otto',
-        'username': '@mdo',
-        'username2': 'Mark'
-      },
-      {
-        'first': 'Jacob',
-        'last': 'Thornton',
-        'username': '@fat',
-        'username2': 'Jacob',
-     
-      },
-      {
-        'first': 'Larry',
-        'last': 'the Bird',
-        'username': '@twitter',
-        'username2': 'Larry',
-      },
-      {
-        'first': 'Paul',
-        'last': 'Topolski',
-        'username': '@P_Topolski',
-        'username2': 'Paul',
-     
-      }
-    ]
+    rows:
+      subs.slice(0).reverse().map(sub => (
+        {
+          'Title': sub.title,
+          'Type': sub.type,
+          'amount': sub.amount,
+          'date': sub.date
+        }
+      ))
+
+
+
   };
 
-  return(
+  return (
     <MDBCard narrow>
       <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-4 mb-3">
         <div>
@@ -85,7 +66,7 @@ const TablePage = (props) => {
           <MDBTableBody rows={data_panel.rows} />
         </MDBTable>
       </MDBCardBody>
-    </MDBCard>
+    </MDBCard >
   );
 };
 
