@@ -24,7 +24,7 @@ const TablePage = ({ subs }) => {
       },
       {
         'label': 'Due Date',
-        'field': 'date',
+        'field': 'date2',
       }
     ],
     rows:
