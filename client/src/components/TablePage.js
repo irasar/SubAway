@@ -50,7 +50,7 @@ const TablePage = ({ subs }) => {
             <i className="fa fa-columns mt-0"></i>
           </MDBBtn>
         </div>
-        <a href="#" className="white-text mx-3">Table name</a>
+        <a href="#" className="white-text mx-3">Your Subscriptions</a>
         <div>
           <MDBBtn outline rounded size="sm" color="white" className="px-2">
             <i className="fas fa-pencil-alt mt-0"></i>

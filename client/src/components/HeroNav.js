@@ -1,6 +1,8 @@
 import React from 'react';
 import {MDBBtn, MDBIcon, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import FullPageIntroWithFixedTransparentNavbar from "./Navbar";
+import way from "../images/subsad.jpg";
+
 
 class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
   constructor(props) {
@@ -24,11 +26,13 @@ class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
         <header>
           <FullPageIntroWithFixedTransparentNavbar />
 
-          <MDBView src="https://mdbootstrap.com/img/Photos/Others/img%20(40).jpg">
-            <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-              <h1>Welcome to SubAway</h1>
-              <h3>Where we manage your subscriptions so you dont have to.</h3>
-              <MDBBtn outline color="white" className="mb-5"><MDBIcon icon="clone" className="mr-2"></MDBIcon> Get Started</MDBBtn>
+          <MDBView className="heroPic" src={way}>
+            <MDBMask  className="flex-center flex-column text-white text-center">
+              <h1 className="welcome"> Welcome to SubAway</h1>
+              <h2 className="secondWelcome"> Where we manage your subscriptions so you dont have to.</h2>
+              <div class="stage">
+              <MDBBtn outline color="white" id="pageLogo"  className="mb-5 bounce-7"><MDBIcon icon="clone" className="mr-2"></MDBIcon>Get Started</MDBBtn>
+              </div>
             </MDBMask>
         
           </MDBView>
