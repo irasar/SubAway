@@ -21,7 +21,6 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
 
   render() {
     return (
-      <div>
         <header>
           <Router>
             <MDBNavbar color="bg-primary" fixed="top" dark expand="md" scrolling transparent>
@@ -32,10 +31,10 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                    <MDBNavLink to="#">Home</MDBNavLink>
+                    <MDBNavLink to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="#">Link</MDBNavLink>
+                    <MDBNavLink to="/member">Member</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <LogoutButton />
@@ -48,7 +47,6 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             </MDBNavbar>
           </Router>
         </header>
-      </div>
     );
   }
 }
