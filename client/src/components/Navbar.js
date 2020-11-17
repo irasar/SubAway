@@ -2,6 +2,7 @@ import LogoutButton from "./LogoutButton";
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
+import logoi from "../images/logosubaway.png";
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   constructor(props) {
@@ -23,8 +24,9 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
     return (
         <header>
           <Router>
-            <MDBNavbar color="bg-primary" fixed="top" dark expand="md" scrolling transparent>
+            <MDBNavbar color="" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
+              <img className="subLogo" src={logoi} alt="subawaylogo" />
                 <strong>Navbar</strong>
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}

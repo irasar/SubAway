@@ -3,6 +3,8 @@ import React from 'react';
 import {MDBBtn, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import FullPageIntroWithFixedTransparentNavbar from "./Navbar";
+import way from "../images/subsad.jpg";
+// import logoi from "../images/logosubaway.png";
 
 class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
   constructor(props) {
@@ -26,10 +28,11 @@ class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
         <header>
           <FullPageIntroWithFixedTransparentNavbar />
 
-          <MDBView src="https://mdbootstrap.com/img/Photos/Others/img%20(40).jpg">
-            <MDBMask overlay="purple-light" className="flex-center flex-column text-white text-center">
-              <h1>Welcome to SubAway</h1>
-              <h3>Where we manage your subscriptions so you dont have to.</h3>
+          <MDBView className="heroPic" src={way}>
+            <MDBMask  className="flex-center flex-column text-white text-center">
+            {/* <img className="subLogo" src={logoi} alt="subawaylogo" /> */}
+              <h1 className="welcome"> Welcome to SubAway</h1>
+              <h2 className="secondWelcome"> Where we manage your subscriptions so you dont have to.</h2>
               <MDBBtn outline color="white" className="mb-5"><MDBIcon icon="clone" className="mr-2"></MDBIcon> Get Started</MDBBtn>
             </MDBMask>
         
