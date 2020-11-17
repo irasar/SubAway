@@ -1,11 +1,12 @@
 import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import moment from "moment";
 
 const TablePage = ({ subs }) => {
   const data_panel = {
     columns: [
       {
-        'label': 'Title',
+        'label': 'Name',
         'field': 'title',
 
       },
@@ -14,26 +15,28 @@ const TablePage = ({ subs }) => {
         'field': 'type',
       },
       {
-        'label': 'Amount',
+        'label': 'Price($USD)',
         'field': 'amount',
       },
       {
-        'label': 'Date',
+        'label': 'Star Date',
         'field': 'date',
+      },
+      {
+        'label': 'Due Date',
+        'field': 'date2',
       }
     ],
     rows:
-      subs.slice(0).reverse().map(sub => (
+      subs.slice(0).reverse().map((sub) => (
         {
-          'Title': sub.title,
-          'Type': sub.type,
+          'title': sub.title,
+          'type': sub.type,
           'amount': sub.amount,
-          'date': sub.date
+          'startDate': sub.startDate,
+          'dueDate': moment(sub.dueDate).from(moment()),
         }
       ))
-
-
-
   };
 
   return (
@@ -47,7 +50,7 @@ const TablePage = ({ subs }) => {
             <i className="fa fa-columns mt-0"></i>
           </MDBBtn>
         </div>
-        <a href="#" className="white-text mx-3">Table name</a>
+        <a href="#" className="white-text mx-3">Your Subscriptions</a>
         <div>
           <MDBBtn outline rounded size="sm" color="white" className="px-2">
             <i className="fas fa-pencil-alt mt-0"></i>

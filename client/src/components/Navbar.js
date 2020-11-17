@@ -1,8 +1,9 @@
 import LogoutButton from "./LogoutButton";
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink} from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import logoi from "../images/logosubaway.png";
+import LoginButton from "./LoginButton";
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   constructor(props) {
@@ -33,16 +34,17 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                    <MDBNavLink id="navStyle" to="/">Home </MDBNavLink>
+                    <MDBLink id="navStyle" to="/">Home </MDBLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink id="navStyle" to="/member">Member </MDBNavLink>
+                    <LoginButton>
+                    </LoginButton>
                   </MDBNavItem>
                   <MDBNavItem>
                     <LogoutButton />
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink id="navStyleP" to="#">Profile</MDBNavLink>
+                    <MDBLink id="navStyleP" to="#">Profile</MDBLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
