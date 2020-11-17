@@ -16,7 +16,7 @@ function Member() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            console.log(user.sub);
+            console.log(user);
             getSubs();
         }
     }, [isAuthenticated])
@@ -45,8 +45,8 @@ function Member() {
                     title: formInput.title,
                     type: formInput.type,
                     amount: formInput.amount,
-                    userID: user.sub
-
+                    userID: user.sub,
+                    startDate: moment(startDate).format("MM.DD.YYYY")
                 })
                 .then(res => getSubs())
                 .catch(err => console.log(err));

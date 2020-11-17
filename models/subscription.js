@@ -15,7 +15,11 @@ const subscriptionSchema = new Schema({
         required: true
     },
     dueDate: {
-        type: Date,
+        type: String,
+        required: false
+    },
+    startDate: {
+        type: String,
         required: false
     },
     userID: {
