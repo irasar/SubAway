@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-function Form({ handleInputChange, startDate, setStartDate }) {
+function Form({ handleInputChange, startDate, setStartDate, dueDate, setDueDate }) {
   return (
     <>
       <input onChange={handleInputChange} className="form-control form-control" type="text" placeholder="Title" name="title" />
@@ -18,6 +18,7 @@ function Form({ handleInputChange, startDate, setStartDate }) {
       </select>
       <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="Amount" name="amount" />
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+      <DatePicker selected={dueDate} onChange={date => setDueDate(date)} />
 
     </>
   );

@@ -13,6 +13,7 @@ function Member() {
     const [formInput, setFormInput] = useState({ type: "Streaming" });
     const { user, isAuthenticated } = useAuth0();
     const [startDate, setStartDate] = useState(new Date());
+    const [dueDate, setDueDate] = useState(new Date());
 
 
     useEffect(() => {
@@ -47,7 +48,8 @@ function Member() {
                     type: formInput.type,
                     amount: formInput.amount,
                     userID: user.sub,
-                    startDate: moment(startDate).format("MM.DD.YYYY")
+                    startDate: moment(startDate).format("MM.DD.YYYY"),
+                    dueDate: moment(dueDate).format("MM.DD.YYYY")
 
                 })
                 .then(res => getSubs())
@@ -72,7 +74,9 @@ function Member() {
                 handleInputChange={handleInputChange}
                 handleFormSubmit={handleFormSubmit}
                 startDate={startDate}
-                setStartDate={setStartDate} />
+                setStartDate={setStartDate}
+                dueDate={dueDate}
+                setDueDate={setDueDate} />
             <div className="row">
                 <div className="col-md-6"></div>
 
@@ -90,20 +94,9 @@ function Member() {
                     name: {formInput.title}
                     type: {formInput.type}
                     amount: {formInput.amount}
-                    date: {moment(startDate).format("MM.DD.YYYY")}
+                    start date: {moment(startDate).format("MM.DD.YYYY")}
+                    due date: {moment(dueDate).format("MM.DD.YYYY")}
                 </p>
-            </div>
-            <div className="row">
-                <div className="col-md-8 mx-auto text-center">
-                    <p>Subscriptions</p>
-                    {subs.slice(0).reverse().map(sub => (
-                        <div key={sub._id}>
-                            <p>{sub.title}</p>
-                            <p>{sub.type}</p>
-                            <p>{sub.amount}</p>
-                        </div>
-                    ))}
-                </div>
             </div>
         </div>
 

@@ -21,7 +21,12 @@ render() {
         <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
           <MDBModalHeader toggle={this.toggle(14)}>New Subscription</MDBModalHeader>
           <MDBModalBody>
-          <Form handleInputChange={this.props.handleInputChange} startDate={this.props.startDate} setStartDate={this.props.setStartDate}/>
+          <Form
+          handleInputChange={this.props.handleInputChange}
+          startDate={this.props.startDate}
+          setStartDate={this.props.setStartDate}
+          dueDate={this.props.dueDate}
+          setDueDate={this.props.setDueDate} />
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn color="secondary" onClick={this.toggle(14)}>Close</MDBBtn>

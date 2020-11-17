@@ -1,11 +1,12 @@
 import React from 'react';
 import { MDBCard, MDBCardBody, MDBCardHeader, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import moment from "moment";
 
 const TablePage = ({ subs }) => {
   const data_panel = {
     columns: [
       {
-        'label': 'Title',
+        'label': 'Name',
         'field': 'title',
 
       },
@@ -14,26 +15,28 @@ const TablePage = ({ subs }) => {
         'field': 'type',
       },
       {
-        'label': 'Amount',
+        'label': 'Price($USD)',
         'field': 'amount',
       },
       {
-        'label': 'Date',
+        'label': 'Star Date',
+        'field': 'date',
+      },
+      {
+        'label': 'Due Date',
         'field': 'date',
       }
     ],
     rows:
-      subs.slice(0).reverse().map(sub => (
+      subs.slice(0).reverse().map((sub) => (
         {
-          'Title': sub.title,
-          'Type': sub.type,
+          'title': sub.title,
+          'type': sub.type,
           'amount': sub.amount,
-          'date': sub.startDate,
+          'startDate': sub.startDate,
+          'dueDate': moment(sub.dueDate).from(moment()),
         }
       ))
-
-
-
   };
 
   return (
