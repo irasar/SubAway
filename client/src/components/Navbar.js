@@ -1,6 +1,6 @@
 import LogoutButton from "./LogoutButton";
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBContainer, MDBMask, MDBView } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink} from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 class FullPageIntroWithFixedTransparentNavbar extends React.Component {

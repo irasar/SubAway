@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBInput, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 
 const TablePage = ({ subs }) => {
   const data_panel = {
@@ -28,7 +28,7 @@ const TablePage = ({ subs }) => {
           'Title': sub.title,
           'Type': sub.type,
           'amount': sub.amount,
-          'date': sub.date
+          'date': sub.startDate,
         }
       ))
 
