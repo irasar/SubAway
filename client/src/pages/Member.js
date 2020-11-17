@@ -10,7 +10,7 @@ import TablePage from "../components/TablePage";
 function Member() {
 
     const [subs, setSubs] = useState([]);
-    const [formInput, setFormInput] = useState({});
+    const [formInput, setFormInput] = useState({ type: "Streaming"});
     const { user, isAuthenticated } = useAuth0();
 
 
@@ -46,6 +46,7 @@ function Member() {
                     type: formInput.type,
                     amount: formInput.amount,
                     userID: user.sub
+                    
 
                 })
                 .then(res => getSubs())
