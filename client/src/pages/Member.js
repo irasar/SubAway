@@ -5,14 +5,14 @@ import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import ModalPage from "../components/Modal";
 import TablePage from "../components/TablePage";
-
+import moment from "moment";
 
 function Member() {
 
     const [subs, setSubs] = useState([]);
-    const [formInput, setFormInput] = useState({});
+    const [formInput, setFormInput] = useState({ type: "Streaming" });
     const { user, isAuthenticated } = useAuth0();
-
+    const [startDate, setStartDate] = useState(new Date());
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -60,13 +60,17 @@ function Member() {
 
     return (
         <div>
-    <FullPageIntroWithFixedTransparentNavbar />
-    <br>
-    </br>
-    <br>
-    </br>
-    <br></br>
-    <ModalPage handleInputChange={handleInputChange} handleFormSubmit={handleFormSubmit} />
+            <FullPageIntroWithFixedTransparentNavbar />
+            <br>
+            </br>
+            <br>
+            </br>
+            <br></br>
+            <ModalPage
+                handleInputChange={handleInputChange}
+                handleFormSubmit={handleFormSubmit}
+                startDate={startDate}
+                setStartDate={setStartDate} />
             <div className="row">
                 <div className="col-md-6"></div>
 
@@ -76,8 +80,11 @@ function Member() {
             </div>
             <div className="row">
                 <div className="col-md-6 mx-auto">
-                    <TablePage subs={subs}/>
+                    <TablePage subs={subs} />
                 </div>
+            </div>
+            <div>
+    <p>name:{formInput.title}, type:{formInput.type}, amount:{formInput.amount}, date:{moment(startDate).format("MM.DD.YYYY")}</p>
             </div>
 
             <div className="row">
