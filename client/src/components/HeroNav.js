@@ -4,7 +4,7 @@ import {MDBBtn, MDBIcon, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggl
 import { BrowserRouter as Router } from 'react-router-dom';
 import FullPageIntroWithFixedTransparentNavbar from "./Navbar";
 import way from "../images/subsad.jpg";
-// import logoi from "../images/logosubaway.png";
+
 
 class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
   constructor(props) {
@@ -30,10 +30,11 @@ class FullPageIntroWithFixedTransparentNavbarx extends React.Component {
 
           <MDBView className="heroPic" src={way}>
             <MDBMask  className="flex-center flex-column text-white text-center">
-            {/* <img className="subLogo" src={logoi} alt="subawaylogo" /> */}
               <h1 className="welcome"> Welcome to SubAway</h1>
               <h2 className="secondWelcome"> Where we manage your subscriptions so you dont have to.</h2>
-              <MDBBtn outline color="white" className="mb-5"><MDBIcon icon="clone" className="mr-2"></MDBIcon> Get Started</MDBBtn>
+              <div class="stage">
+              <MDBBtn outline color="white" id="pageLogo"  className="mb-5 bounce-7"><MDBIcon icon="clone" className="mr-2"></MDBIcon>Get Started</MDBBtn>
+              </div>
             </MDBMask>
         
           </MDBView>

@@ -1,17 +1,69 @@
 .welcome{
 font-weight: bolder;
 font-size: 70px;
+
 }
 
 .secondWelcome{
     font-weight: bolder;
+    margin-bottom: -150px;
 }
-
-.welcomeBtn{
-    border-width: 100px;
-}
-
-.subLogo{
+  .stage {
+    justify-content: center;
+    margin-top: 15%;
+    height: 100px;
+    display: flex;
+  }
   
+  #pageLogo {
+    align-self: flex-end;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transform-origin: top;
+ 
+  }
+  .bounce-7 {
+    animation-name: bounce-7;
+    animation-timing-function: cubic-bezier(0.2);
+  }
+  
+  @keyframes bounce-7 {
+    0% {
+      transform: scale(1, 1) translateY(0);
+    }
+    10% {
+      transform: scale(1.1, 0.9) translateY(0);
+    }
+    30% {
+      transform: scale(0.9, 1.1) translateY(-30px);
+    }
+    50% {
+      transform: scale(1.05, 0.95) translateY(0);
+    }
+    57% {
+      transform: scale(1, 1) translateY(-7px);
+    }
+    64% {
+      transform: scale(1, 1) translateY(0);
+    }
+    100% {
+      transform: scale(1, 1) translateY(0);
+    }
+  }
 
+  #navStyle{
+      color: black;
+      font-weight: bolder;
+      font-size: 20px;  
+      border-right: 2px solid black;
+    padding: 5px;
+  }
+  #navStyleP{
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;  
+    padding: 5px;
+    
+  
 }
+

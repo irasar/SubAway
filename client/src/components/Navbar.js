@@ -27,22 +27,22 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
             <MDBNavbar color="" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
               <img className="subLogo" src={logoi} alt="subawaylogo" />
-                <strong>Navbar</strong>
+               
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                    <MDBNavLink to="/">Home</MDBNavLink>
+                    <MDBNavLink id="navStyle" to="/">Home </MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="/member">Member</MDBNavLink>
+                    <MDBNavLink id="navStyle" to="/member">Member </MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <LogoutButton />
                   </MDBNavItem>
                   <MDBNavItem>
-                    <MDBNavLink to="#">Profile</MDBNavLink>
+                    <MDBNavLink id="navStyleP" to="#">Profile</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
