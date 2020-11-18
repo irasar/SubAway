@@ -1,8 +1,11 @@
 import React from 'react';
 import { MDBCard, MDBCardBody, MDBCardHeader, MDBBtn, MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
 import moment from "moment";
+import Modal from "./Modal";
+import Form from "../components/Form";
 
-const TablePage = ({ subs }) => {
+const TablePage = ({ subs, handleFormSubmit, handleInputChange, startDate,
+  setStartDate, dueDate, setDueDate }) => {
   const data_panel = {
     columns: [
       {
@@ -15,7 +18,7 @@ const TablePage = ({ subs }) => {
         'field': 'type',
       },
       {
-        'label': 'Price($USD)',
+        'label': 'Price(USD)',
         'field': 'amount',
       },
       {
@@ -32,7 +35,7 @@ const TablePage = ({ subs }) => {
         {
           'title': sub.title,
           'type': sub.type,
-          'amount': sub.amount,
+          'amount': "$" + sub.amount,
           'startDate': sub.startDate,
           'dueDate': moment(sub.dueDate).from(moment()),
         }
@@ -41,29 +44,26 @@ const TablePage = ({ subs }) => {
 
   return (
     <MDBCard narrow>
-      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-4 mb-3">
-        <div>
-          <MDBBtn outline rounded size="sm" color="white" className="px-2">
-            <i className="fa fa-th-large mt-0"></i>
-          </MDBBtn>
-          <MDBBtn outline rounded size="sm" color="white" className="px-2">
-            <i className="fa fa-columns mt-0"></i>
-          </MDBBtn>
+      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-0 mb-0 row mb-0">
+        <div className="col-md-4 px-0">
+          <Modal handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName="Add Subscription">
+            <Form handleInputChange={handleInputChange}
+              startDate={startDate}
+              setStartDate={setStartDate}
+              dueDate={dueDate}
+              setDueDate={setDueDate} />
+          </Modal>
         </div>
-        <a href="#" className="white-text mx-3">Your Subscriptions</a>
-        <div>
+        <div className="col-md-7">
+          <h3 className="white-text mr-0">Your Subscriptions</h3>
+        </div>
+        <div className="col-md-1">
           <MDBBtn outline rounded size="sm" color="white" className="px-2">
             <i className="fas fa-pencil-alt mt-0"></i>
           </MDBBtn>
-          <MDBBtn outline rounded size="sm" color="white" className="px-2">
-            <i className="fas fa-times mt-0"></i>
-          </MDBBtn>
-          <MDBBtn outline rounded size="sm" color="white" className="px-2">
-            <i className="fa fa-info-circle mt-0"></i>
-          </MDBBtn>
         </div>
       </MDBCardHeader>
-      <MDBCardBody cascade>
+      <MDBCardBody className="pt-0 pb-0" cascade>
         <MDBTable btn fixed>
           <MDBTableHead columns={data_panel.columns} />
           <MDBTableBody rows={data_panel.rows} />

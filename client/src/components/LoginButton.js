@@ -7,7 +7,7 @@ function LoginButton() {
     return (
         !isAuthenticated && (
             <MDBNavItem active>
-                <MDBLink id="navStyle" onClick={() => loginWithRedirect()}>Login</MDBLink>
+                <MDBLink id="navStyleP" onClick={() => loginWithRedirect()}>Login</MDBLink>
             </MDBNavItem>
         )
     )

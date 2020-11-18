@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
-import ModalPage from "../components/Modal";
+import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
-import moment from "moment";
+import moment from "moment"
+import Input from "../components/Input"
 import way3 from "../images/way3.jpg";
 import { MDBView } from 'mdbreact';
+
 
 function Member() {
 
@@ -15,6 +17,7 @@ function Member() {
     const { user, isAuthenticated } = useAuth0();
     const [startDate, setStartDate] = useState(new Date());
     const [dueDate, setDueDate] = useState(new Date());
+    const [expenses, setExpenses] = useState(0)
 
 
     useEffect(() => {
@@ -27,18 +30,26 @@ function Member() {
     function getSubs() {
         API.findAllSubs(user.sub)
             .then(res => {
-                console.log(res.data);
-                setSubs(res.data);
+                sortDates(res.data);
             })
             .catch(err => console.log(err));
     };
 
     function handleInputChange(event) {
-
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
 
+    function handleExpenses(event) {
+        event.preventDefault();
+        setExpenses(document.getElementById("formGroupExampleInput").value)
+    }
+
+    function sortDates(data) {
+        const tempArray = data;
+        const sortedArray = tempArray.sort((a, b) => new moment(b.dueDate).format('YYYYMMDD') - new moment(a.dueDate).format('YYYYMMDD'))
+        setSubs(sortedArray);
+    }
 
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -73,33 +84,27 @@ function Member() {
             <br>
             </br>
             <br></br>
-            <ModalPage
-                handleInputChange={handleInputChange}
-                handleFormSubmit={handleFormSubmit}
-                startDate={startDate}
-                setStartDate={setStartDate}
-                dueDate={dueDate}
-                setDueDate={setDueDate} />
             <div className="row">
-                <div className="col-md-6"></div>
-
-                <div className="col-md-3 offset-3">
-                    <p>Your Expenses:</p>
+                <div className="col-md-5 offset-7">
+                    <div>
+                        <Modal handleFormSubmit={handleExpenses} buttonName="Edit Expenses" title="Expenses">
+                            <Input>Expenses</Input>
+                        </Modal>
+                        <p>My Expenses: {expenses}</p>
+                    </div>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-6 mx-auto">
-                    <TablePage subs={subs} />
+                    <TablePage
+                        handleInputChange={handleInputChange}
+                        handleFormSubmit={handleFormSubmit}
+                        startDate={startDate}
+                        setStartDate={setStartDate}
+                        dueDate={dueDate}
+                        setDueDate={setDueDate}
+                        subs={subs} />
                 </div>
-            </div>
-            <div>
-                <p>
-                    name: {formInput.title}
-                    type: {formInput.type}
-                    amount: {formInput.amount}
-                    start date: {moment(startDate).format("MM.DD.YYYY")}
-                    due date: {moment(dueDate).format("MM.DD.YYYY")}
-                </p>
             </div>
         </div>
  
