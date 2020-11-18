@@ -4,8 +4,11 @@ import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
-import moment from "moment";
+import moment from "moment"
 import Input from "../components/Input"
+import way3 from "../images/way3.jpg";
+import { MDBView } from 'mdbreact';
+
 
 function Member() {
 
@@ -72,6 +75,8 @@ function Member() {
 
 
     return (
+
+        <MDBView className="heroPic" src={way3}>
         <div>
             <FullPageIntroWithFixedTransparentNavbar />
             <br>
@@ -102,7 +107,8 @@ function Member() {
                 </div>
             </div>
         </div>
-
+ 
+        </MDBView>
 
     )
 }
