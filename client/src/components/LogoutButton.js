@@ -1,13 +1,15 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react"
+import { MDBNavItem, MDBLink } from 'mdbreact';
+
 
 function LogoutButton() {
     const { logout, isAuthenticated } = useAuth0();
     return (
         isAuthenticated && (
-            <button onClick={() => logout()}>
-                Log out
-            </button>
+            <MDBNavItem active>
+                <MDBLink id="navStyle" onClick={() => logout()}>Log out</MDBLink>
+            </MDBNavItem>
         )
     )
 }

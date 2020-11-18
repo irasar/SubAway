@@ -15,7 +15,7 @@ ReactDOM.render(
     <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri={window.location.origin}>
+    redirectUri="http://localhost:3000/member">
         <App />
     </Auth0Provider>,
     document.getElementById("root"));
