@@ -6,6 +6,7 @@ function Home() {
         <div>
             <FullPageIntroWithFixedTransparentNavbarx />
         </div>
+        
 
 
     )
