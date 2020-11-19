@@ -44,7 +44,8 @@ const TablePage = ({ subs, handleFormSubmit, handleInputChange, startDate,
 
   return (
     <MDBCard narrow>
-      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-0 mb-0 row mb-0">
+      <MDBCardHeader className="view view-cascade gradient-card-header 
+blue-gradient d-flex justify-content-between align-items-center py-2 mx-0 mb-0 row mb-0">
         <div className="col-md-4 px-0">
           <Modal handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName="Add Subscription">
             <Form handleInputChange={handleInputChange}

@@ -76,7 +76,7 @@ function Member() {
 
     return (
 
-        <MDBView className="heroPic" src={way3}>
+        // <MDBView className="heroPic" src={way3}>
         <div>
             <FullPageIntroWithFixedTransparentNavbar />
             <br>
@@ -108,7 +108,7 @@ function Member() {
             </div>
         </div>
  
-        </MDBView>
+        // </MDBView>
 
     )
 }
