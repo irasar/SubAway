@@ -8,7 +8,7 @@ function LogoutButton() {
     return (
         isAuthenticated && (
             <MDBNavItem active>
-                <MDBLink id="navStyleP" onClick={() => logout()}>Log out</MDBLink>
+                <MDBLink to="/" id="navStyleP" onClick={() => logout()}>Log out</MDBLink>
             </MDBNavItem>
         )
     )

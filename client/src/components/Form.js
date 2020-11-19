@@ -16,7 +16,7 @@ function Form({ handleInputChange, startDate, setStartDate, dueDate, setDueDate 
         <option value="Food">Food</option>
         <option value="other">Other</option>
       </select>
-      <input onChange={handleInputChange} className="form-control form-control-sm" type="text" placeholder="Amount" name="amount" />
+      <input onChange={handleInputChange} className="form-control form-control" type="text" placeholder="Amount" name="amount" />
       <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
       <DatePicker selected={dueDate} onChange={date => setDueDate(date)} />
 

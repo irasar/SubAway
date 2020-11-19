@@ -30,13 +30,14 @@ module.exports = {
     },
     findUser: function (req, res) {
         console.log("finding user");
-        console.log(req.params.id);
         db.User.findOne({ auth0ID: req.params.id })
-            .then(user => res.json(user))
+            .then(user => {
+                res.json(user)
+            })
             .catch(err => res.status(422).json(err));
     },
     createUser: function (req, res) {
-        console.log("creatin user");
+        console.log("creating user");
         db.User.create({ auth0ID: req.params.id })
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
