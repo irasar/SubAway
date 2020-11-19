@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { MDBAnimation, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBMask,
+import { MDBAnimation, MDBMask,
 MDBRow, MDBCol, MDBIcon, MDBBtn, MDBView, MDBContainer } from "mdbreact";
 import Navbar from "./Navbar";
  
@@ -44,9 +44,9 @@ return (
                     Welcome to SubAway
                     </h1>
                     <hr className="hr-light" />
-                    <h6 className="mb-4">
+                    <h3 className="mb-4">
                     Where we manage your subscriptions so you dont have to.
-                    </h6>
+                    </h3>
                  
                     <MDBBtn outline color="white">
                      Get Started

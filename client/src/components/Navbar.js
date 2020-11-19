@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink } from 'mdbreact';
-import logoi from "../images/logosubaway.png";
+import logoi from "../images/logo-subaway.png";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
