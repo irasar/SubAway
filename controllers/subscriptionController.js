@@ -38,7 +38,13 @@ module.exports = {
     },
     createUser: function (req, res) {
         console.log("creating user");
-        db.User.create({ auth0ID: req.params.id })
+        db.User.create(req.body)
+            .then(user => res.json(user))
+            .catch(err => res.status(422).json(err));
+    },
+    updateBudget: function (req, res) {
+        console.log("updated user");
+        db.User.findOneAndUpdate({auth0ID: req.body.auth0ID}, {budget: req.body.budget})
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
     }

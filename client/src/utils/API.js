@@ -21,7 +21,10 @@ export default {
     findUser: function (id) {
         return axios.get("/api/user/" + id);
     },
-    createUser: function (id) {
-        return axios.post("/api/user/" + id);
+    createUser: function (user) {
+        return axios.post("/api/user", user);
+    },
+    updateUser: function (user) {
+        return axios.put("/api/user", user);
     }
 }

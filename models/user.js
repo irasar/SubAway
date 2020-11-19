@@ -5,6 +5,10 @@ const userSchema = new Schema({
     auth0ID: {
         type: String,
         required: false
+    },
+    budget: {
+        type: String,
+        required: false
     }
 });
 

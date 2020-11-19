@@ -17,7 +17,8 @@ function Member() {
     const { user, isAuthenticated } = useAuth0();
     const [startDate, setStartDate] = useState(new Date());
     const [dueDate, setDueDate] = useState(new Date());
-    const [expenses, setExpenses] = useState(0)
+    const [budget, setBudget] = useState(0);
+    const [expenses, setExpenses] = useState(0);
 
 
     useEffect(() => {
@@ -27,10 +28,25 @@ function Member() {
         }
     }, [isAuthenticated])
 
+    useEffect(() => {
+        addExpenses();
+    }, [subs])
+
+    function addExpenses() {
+        const newExpenses = [];
+        let total = 0;
+        subs.forEach(sub => {
+            newExpenses.push(parseFloat(sub.amount))
+        });
+        total = newExpenses.reduce((a, b) => a + b, 0);
+        setExpenses(total);
+    }
+
     function createUser(id) {
         API.createUser(id)
             .then(res => {
                 console.log("created user " + res.data.auth0ID);
+                setBudget(res.data.budget);
             })
             .catch(err => console.log(err));
     }
@@ -39,11 +55,12 @@ function Member() {
         console.log(id);
         API.findUser(id)
             .then(res => {
-                if(res.data === null){
-                    createUser(id)
+                if (res.data === null) {
+                    createUser({ auth0ID: id, budget: budget })
                 }
-                else{
-                    console.log("found user " + res.data.auth0ID);
+                else {
+                    console.log("found user " + res.data.auth0ID)
+                    setBudget(res.data.budget);
                 }
             })
             .catch(err => console.log(err));
@@ -62,9 +79,17 @@ function Member() {
         setFormInput({ ...formInput, [name]: value })
     };
 
-    function handleExpenses(event) {
+    function handleBudget(event) {
         event.preventDefault();
-        setExpenses(document.getElementById("formGroupExampleInput").value)
+        setBudget(document.getElementById("formGroupExampleInput").value)
+        updateBudget(document.getElementById("formGroupExampleInput").value);
+    }
+
+    function updateBudget(newBudget) {
+        console.log(user.sub + " " + newBudget);
+        API.updateUser({ auth0ID: user.sub, budget: newBudget })
+            .then(res => console.log("updated budget"))
+            .catch(err => console.log(err));
     }
 
     function sortDates(data) {
@@ -109,10 +134,11 @@ function Member() {
             <div className="row">
                 <div className="col-md-5 offset-7">
                     <div>
-                        <Modal handleFormSubmit={handleExpenses} buttonName="Edit Expenses" title="Expenses">
-                            <Input>Expenses</Input>
+                        <Modal handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
+                            <Input>budget</Input>
                         </Modal>
-                        <p>My Expenses: {expenses}</p>
+                        <p>My Budget: {budget}</p>
+                        <p>Money left: {(parseFloat(budget) - expenses).toFixed(2)}</p>
                     </div>
                 </div>
             </div>
