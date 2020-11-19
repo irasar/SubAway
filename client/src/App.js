@@ -6,7 +6,7 @@ import Member from "./pages/Member";
 import Loading from "./components/loading";
 import PrivateRoute from "./components/private-route";
 import { useAuth0 } from "@auth0/auth0-react";
-import Navbar from "./components/Navbar"
+
 
 function App() {
 
