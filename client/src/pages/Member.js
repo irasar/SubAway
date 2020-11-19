@@ -22,10 +22,32 @@ function Member() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            console.log(user.sub);
             getSubs();
+            getUser(user.sub);
         }
     }, [isAuthenticated])
+
+    function createUser(id) {
+        API.createUser(id)
+            .then(res => {
+                console.log("created user " + res.data.auth0ID);
+            })
+            .catch(err => console.log(err));
+    }
+
+    function getUser(id) {
+        console.log(id);
+        API.findUser(id)
+            .then(res => {
+                if(res.data === null){
+                    createUser(id)
+                }
+                else{
+                    console.log("found user " + res.data.auth0ID);
+                }
+            })
+            .catch(err => console.log(err));
+    }
 
     function getSubs() {
         API.findAllSubs(user.sub)
@@ -107,7 +129,6 @@ function Member() {
                 </div>
             </div>
         </div>
- 
         // </MDBView>
 
     )
