@@ -1,12 +1,11 @@
 import React from 'react';
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
 import logoi from "../images/logosubaway.png";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
 
-class FullPageIntroWithFixedTransparentNavbar extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,34 +24,27 @@ class FullPageIntroWithFixedTransparentNavbar extends React.Component {
   render() {
     return (
       <header>
-        <Router>
-          <MDBNavbar color="" fixed="top" dark expand="md" scrolling transparent>
-            <MDBNavbarBrand href="/">
-              <img className="subLogo" src={logoi} alt="subawaylogo" />
-
-            </MDBNavbarBrand>
-            {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-            <MDBCollapse isOpen={this.state.collapse} navbar>
-              <MDBNavbarNav left>
-                <MDBNavItem active>
-                  <MDBLink id="navStyle" to="/">Home</MDBLink>
-                </MDBNavItem>
-                <MDBNavItem active>
-                  <MDBLink id="navStyle" to="/member">Member</MDBLink>
-                </MDBNavItem>
-                <MDBNavItem>
-                  <LogoutButton />
-                </MDBNavItem>
-                <MDBNavItem>
-                  <LoginButton />
-                </MDBNavItem>
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
-        </Router>
+        <MDBNavbar color="" fixed="top" dark expand="md" scrolling transparent>
+          <MDBNavbarBrand href="/">
+            <img className="subLogo" src={logoi} alt="subawaylogo" />
+          </MDBNavbarBrand>
+          {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
+          <MDBCollapse isOpen={this.state.collapse} navbar>
+            <MDBNavbarNav left>
+              <MDBNavItem active>
+                <a id="navStyle" href="/">Home</a>
+              </MDBNavItem>
+              <MDBNavItem active>
+                <a id="navStyle" href="/member">Member</a>
+              </MDBNavItem>
+              <LogoutButton />
+              <LoginButton />
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBNavbar>
       </header>
     );
   }
 }
 
-export default FullPageIntroWithFixedTransparentNavbar;
+export default Navbar;
