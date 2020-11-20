@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
+import Table from "../components/Table";
 import moment from "moment"
 import Input from "../components/Input"
 // import way3 from "../images/way3.jpg";
@@ -42,6 +43,8 @@ function Member() {
         setExpenses(total);
     }
 
+    // function
+
     function createUser(id) {
         API.createUser(id)
             .then(res => {
@@ -78,6 +81,12 @@ function Member() {
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
+
+    function deleteSub(id) {
+        API.removeSub(id)
+            .then(res => getSubs())
+            .catch(err => console.log(err));
+    }
 
     function handleBudget(event) {
         event.preventDefault();
@@ -125,7 +134,7 @@ function Member() {
 
         // <MDBView className="heroPic" src={way3}>
         <div>
-            <FullPageIntroWithFixedTransparentNavbar />
+            <Navbar />
             <br>
             </br>
             <br>
@@ -134,7 +143,7 @@ function Member() {
             <div className="row">
                 <div className="col-md-5 offset-7">
                     <div>
-                        <Modal handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
+                        <Modal padding="px-1" handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
                             <Input>budget</Input>
                         </Modal>
                         <p>My Budget: {budget}</p>
@@ -143,8 +152,9 @@ function Member() {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-6 mx-auto">
-                    <TablePage
+                <div id="table" className="col-md-6 mx-auto">
+                    <Table
+                        deleteSub={deleteSub}
                         handleInputChange={handleInputChange}
                         handleFormSubmit={handleFormSubmit}
                         startDate={startDate}

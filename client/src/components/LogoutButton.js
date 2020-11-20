@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react"
 import { MDBNavItem, MDBLink } from 'mdbreact';
+import { Link } from "react-router-dom";
 
 
 function LogoutButton() {
@@ -8,7 +9,7 @@ function LogoutButton() {
     return (
         isAuthenticated && (
             <MDBNavItem active>
-                <MDBLink to="/" id="navStyleP" onClick={() => logout()}>Log out</MDBLink>
+                <Link to="/" id="navStyleP" onClick={() => logout()}>Log out</Link>
             </MDBNavItem>
         )
     )

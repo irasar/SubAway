@@ -23,8 +23,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     removeSub: function (req, res) {
-        db.Subscription.findById({ _id: req.params.id })
-            .then(subscriptions => subscriptions.remove())
+        db.Subscription.deleteOne({ _id: req.params.id })
             .then(subscriptions => res.json(subscriptions))
             .catch(err => res.status(422).json(err));
     },

@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <PrivateRoute exact path="/member" component={Member} />
+        <Route exact path="/member" component={Member} />
       </Switch>
     </Router>
   );
