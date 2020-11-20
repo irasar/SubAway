@@ -6,7 +6,7 @@ function LoginButton() {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
     return (
         !isAuthenticated && (
-            <MDBNavItem active>
+            <MDBNavItem >
                 <MDBLink to="/member" id="navStyleP" onClick={() => loginWithRedirect()}>Login</MDBLink>
             </MDBNavItem>
         )

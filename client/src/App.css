@@ -1,67 +1,42 @@
+#videobackground .gradient {
+    background: -moz-linear-gradient(45deg, 
+    rgba(47, 199, 237, 1.0),
+     rgba(23, 87, 26, 1.0) 100%);
+    background: -webkit-linear-gradient(45deg,
+    rgba(47, 199, 237, 1.0),
+     rgba(23, 87, 26, 1.0) 100%);
+    background:  radial-gradient( circle farthest-corner at 8.8% 14.2%, rgba(2,113,75,0.9) 21.9%, rgba(255,255,255,0.7) 90% );
+}
+
+    
+    #videobackground .view video {
+    top: 0!important;
+    left: 0!important;
+    transform: none!important;
+    height: 100vh;
+    }
 .welcome {
   font-weight: bolder;
   font-size: 70px;
 }
-
 .secondWelcome {
   font-weight: bolder;
-  margin-bottom: -150px;
+  margin-bottom: 40px;
 }
-
-.stage {
-  justify-content: center;
-  margin-top: 15%;
-  height: 100px;
-  display: flex;
-}
-
-#pageLogo {
-  align-self: flex-end;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  transform-origin: top;
-}
-
-.bounce-7 {
-  animation-name: bounce-7;
-  animation-timing-function: cubic-bezier(0.2);
-}
-
-@keyframes bounce-7 {
-  0% {
-    transform: scale(1, 1) translateY(0);
-  }
-  10% {
-    transform: scale(1.1, 0.9) translateY(0);
-  }
-  30% {
-    transform: scale(0.9, 1.1) translateY(-30px);
-  }
-  50% {
-    transform: scale(1.05, 0.95) translateY(0);
-  }
-  57% {
-    transform: scale(1, 1) translateY(-7px);
-  }
-  64% {
-    transform: scale(1, 1) translateY(0);
-  }
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
-}
-
 #navStyle {
-  color: black;
+  color: white;
   font-weight: bolder;
   font-size: 20px;
-  border-right: 2px solid black;
+  border-right: 2px solid whitesmoke;
   padding: 5px;
+
+
+}
+#navStyleP {
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+
 }
 
-#navStyleP {
-  color: black;
-  font-weight: bolder;
-  font-size: 20px;
-  padding: 5px;
-}
+

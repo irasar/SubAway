@@ -6,7 +6,7 @@ import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
 import moment from "moment"
 import Input from "../components/Input"
-import way3 from "../images/way3.jpg";
+// import way3 from "../images/way3.jpg";
 import { MDBView } from 'mdbreact';
 
 
@@ -155,7 +155,6 @@ function Member() {
                 </div>
             </div>
         </div>
-
         // </MDBView>
 
     )
