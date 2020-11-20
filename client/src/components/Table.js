@@ -22,7 +22,7 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
 
     return (
         <div>
-            <div className="row bg-primary">
+            <div className="row morpheus-den-gradient bg-primary">
                 <div className="col-3">
                     <Modal padding="p-1" handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName={<i className="fas fa-plus "></i>}>
                         <Form handleInputChange={handleInputChange}
@@ -33,7 +33,7 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                     </Modal>
                 </div>
                 <div className="col-9">
-                    <h1>Your Subscriptions</h1>
+                    <h1 id="my-subs" >Your Subscriptions</h1>
                 </div>
             </div>
 
@@ -45,7 +45,7 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                 <div className="col-2 text-right">Due Date</div>
             </div>
             {subs.slice(0).reverse().map(sub => (
-                <div key={sub._id} className="row border border-success bg-warning mb-1">
+                <div key={sub._id} className="row mb-1">
                     <div className="col-2">{sub.title}</div>
                     <div className="col-2">{sub.type}</div>
                     <div className="col-2">${sub.amount}</div>

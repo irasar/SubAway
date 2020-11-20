@@ -5,14 +5,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
 import Table from "../components/Table";
-import moment from "moment"
-import Input from "../components/Input"
-// import way3 from "../images/way3.jpg";
-import { MDBView } from 'mdbreact';
+import moment from "moment";
+import Input from "../components/Input";
+import CoolBackground from "../components/CoolBackground";
+import "./Member.css"
 
 
 function Member() {
-
     const [subs, setSubs] = useState([]);
     const [formInput, setFormInput] = useState({ type: "Streaming" });
     const { user, isAuthenticated } = useAuth0();
@@ -132,41 +131,52 @@ function Member() {
 
     return (
 
-        // <MDBView className="heroPic" src={way3}>
-        <div>
-            <Navbar />
-            <br>
-            </br>
-            <br>
-            </br>
-            <br></br>
-            <div className="row">
-                <div className="col-md-5 offset-7">
-                    <div>
-                        <Modal padding="px-1" handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
-                            <Input>budget</Input>
-                        </Modal>
-                        <p>My Budget: {budget}</p>
-                        <p>Money left: {(parseFloat(budget) - expenses).toFixed(2)}</p>
+        <div className="wrapper">
+            <div className="container">
+                <Navbar />
+                <br>
+                </br>
+                <br>
+                </br>
+                <br></br>
+                <div className="row">
+                    <div className="col-md-5 offset-7">
+                        <div>
+                            <Modal padding="px-1" handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
+                                <Input>budget</Input>
+                            </Modal>
+                            <p>My Budget: {budget}</p>
+                            <p>Money left: {(parseFloat(budget) - expenses).toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div id="table" className="col-md-6 mx-auto">
+                        <Table
+                            deleteSub={deleteSub}
+                            handleInputChange={handleInputChange}
+                            handleFormSubmit={handleFormSubmit}
+                            startDate={startDate}
+                            setStartDate={setStartDate}
+                            dueDate={dueDate}
+                            setDueDate={setDueDate}
+                            subs={subs} />
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div id="table" className="col-md-6 mx-auto">
-                    <Table
-                        deleteSub={deleteSub}
-                        handleInputChange={handleInputChange}
-                        handleFormSubmit={handleFormSubmit}
-                        startDate={startDate}
-                        setStartDate={setStartDate}
-                        dueDate={dueDate}
-                        setDueDate={setDueDate}
-                        subs={subs} />
-                </div>
-            </div>
+            <ul className="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
-        // </MDBView>
-
     )
 }
 
