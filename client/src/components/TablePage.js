@@ -33,7 +33,7 @@ const TablePage = ({ subs, handleFormSubmit, handleInputChange, startDate,
     rows:
       subs.slice(0).reverse().map((sub) => (
         {
-          'title': sub.title,
+          'title': <p>{sub.title}</p>,
           'type': sub.type,
           'amount': "$" + sub.amount,
           'startDate': sub.startDate,

@@ -4,6 +4,7 @@ import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
 import TablePage from "../components/TablePage";
+import Table from "../components/Table";
 import moment from "moment"
 import Input from "../components/Input"
 import way3 from "../images/way3.jpg";
@@ -42,6 +43,8 @@ function Member() {
         setExpenses(total);
     }
 
+    // function
+
     function createUser(id) {
         API.createUser(id)
             .then(res => {
@@ -78,6 +81,15 @@ function Member() {
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
+
+    function deleteSub(id) {
+        // event.preventDefault();
+        // console.log(event.target.getAttribute("data-sub"));
+        console.log(id);
+        // API.removeSub(id)
+        // .then(res => getSubs())
+        // .catch(err => console.log(err));
+    }
 
     function handleBudget(event) {
         event.preventDefault();
@@ -144,7 +156,8 @@ function Member() {
             </div>
             <div className="row">
                 <div className="col-md-6 mx-auto">
-                    <TablePage
+                    <Table
+                        deleteSub={deleteSub}
                         handleInputChange={handleInputChange}
                         handleFormSubmit={handleFormSubmit}
                         startDate={startDate}
