@@ -22,14 +22,8 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
 
     return (
         <div>
-            <div className="row">
-                <div className="col">
-
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-2">
+            <div className="row bg-primary">
+                <div className="col-3">
                     <Modal padding="p-1" handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName={<i className="fas fa-plus "></i>}>
                         <Form handleInputChange={handleInputChange}
                             startDate={startDate}
@@ -37,7 +31,14 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                             dueDate={dueDate}
                             setDueDate={setDueDate} />
                     </Modal>
-                    Name</div>
+                </div>
+                <div className="col-9">
+                    <h1>Your Subscriptions</h1>
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-2">Name</div>
                 <div className="col-2">Type</div>
                 <div className="col-2 text-left">Price(USD)</div>
                 <div className="col-2">Start Date</div>

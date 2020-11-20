@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FullPageIntroWithFixedTransparentNavbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
@@ -82,10 +82,10 @@ function Member() {
         setFormInput({ ...formInput, [name]: value })
     };
 
-    function deleteSub(id) {       
+    function deleteSub(id) {
         API.removeSub(id)
-        .then(res => getSubs())
-        .catch(err => console.log(err));
+            .then(res => getSubs())
+            .catch(err => console.log(err));
     }
 
     function handleBudget(event) {
@@ -134,7 +134,7 @@ function Member() {
 
         // <MDBView className="heroPic" src={way3}>
         <div>
-            <FullPageIntroWithFixedTransparentNavbar />
+            <Navbar />
             <br>
             </br>
             <br>
@@ -152,8 +152,8 @@ function Member() {
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-6 mx-auto">
-                    <TablePage
+                <div id="table" className="col-md-6 mx-auto">
+                    <Table
                         deleteSub={deleteSub}
                         handleInputChange={handleInputChange}
                         handleFormSubmit={handleFormSubmit}

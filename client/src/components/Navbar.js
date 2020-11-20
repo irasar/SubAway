@@ -24,7 +24,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <header>
-        <MDBNavbar color="" fixed="top" dark expand="md" scrolling transparent>
+        <MDBNavbar className="p-0" color="" fixed="top" dark expand="md" scrolling transparent>
           <MDBNavbarBrand href="/">
             <img className="subLogo" src={logoi} alt="subawaylogo" />
           </MDBNavbarBrand>

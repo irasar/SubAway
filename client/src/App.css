@@ -65,3 +65,7 @@
   font-size: 20px;
   padding: 5px;
 }
+
+#table {
+  box-shadow:  darkgray 2px 2px 20px 5px;
+}
