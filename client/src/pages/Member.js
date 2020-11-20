@@ -82,13 +82,10 @@ function Member() {
         setFormInput({ ...formInput, [name]: value })
     };
 
-    function deleteSub(id) {
-        // event.preventDefault();
-        // console.log(event.target.getAttribute("data-sub"));
-        console.log(id);
-        // API.removeSub(id)
-        // .then(res => getSubs())
-        // .catch(err => console.log(err));
+    function deleteSub(id) {       
+        API.removeSub(id)
+        .then(res => getSubs())
+        .catch(err => console.log(err));
     }
 
     function handleBudget(event) {
@@ -146,7 +143,7 @@ function Member() {
             <div className="row">
                 <div className="col-md-5 offset-7">
                     <div>
-                        <Modal handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
+                        <Modal padding="px-1" handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
                             <Input>budget</Input>
                         </Modal>
                         <p>My Budget: {budget}</p>
@@ -156,7 +153,7 @@ function Member() {
             </div>
             <div className="row">
                 <div className="col-md-6 mx-auto">
-                    <Table
+                    <TablePage
                         deleteSub={deleteSub}
                         handleInputChange={handleInputChange}
                         handleFormSubmit={handleFormSubmit}
