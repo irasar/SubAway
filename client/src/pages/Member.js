@@ -42,8 +42,6 @@ function Member() {
         setExpenses(total);
     }
 
-    // function
-
     function createUser(id) {
         API.createUser(id)
             .then(res => {
@@ -102,13 +100,14 @@ function Member() {
 
     function sortDates(data) {
         const tempArray = data;
-        const sortedArray = tempArray.sort((a, b) => new moment(b.dueDate).format('YYYYMMDD') - new moment(a.dueDate).format('YYYYMMDD'))
+        const sortedArray = tempArray.sort((a, b) => new moment(a.dueDate).format('YYYYMMDD') - new moment(b.dueDate).format('YYYYMMDD'))
         setSubs(sortedArray);
     }
 
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formInput.title && formInput.type && formInput.amount) {
+            console.log(moment(dueDate).diff(moment(), "days"));
             API.createSub(
                 {
                     title: formInput.title,
