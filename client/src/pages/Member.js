@@ -115,8 +115,8 @@ function Member() {
                     type: formInput.type,
                     amount: formInput.amount,
                     userID: user.sub,
-                    startDate: moment(startDate).format("MM.DD.YYYY"),
-                    dueDate: moment(dueDate).format("MM.DD.YYYY")
+                    startDate: moment(startDate).format("MM/DD/YYYY"),
+                    dueDate: moment(dueDate).format("MM/DD/YYYY")
 
                 })
                 .then(res => getSubs())
@@ -130,53 +130,56 @@ function Member() {
 
 
     return (
-
-        <div className="wrapper">
-            <div className="container">
-                <Navbar />
-                <br>
-                </br>
-                <br>
-                </br>
-                <br></br>
-                <div className="row">
-                    <div className="col-md-5 offset-7">
-                        <div>
-                            <Modal padding="px-1" handleFormSubmit={handleBudget} buttonName="Edit budget" title="budget">
-                                <Input>budget</Input>
-                            </Modal>
-                            <p>My Budget: {budget}</p>
-                            <p>Money left: {(parseFloat(budget) - expenses).toFixed(2)}</p>
+        <>
+            <div className="lol">
+                <div className="container">
+                    <Navbar />
+                    <div className="row members-stuff">
+                        <div className="col-md-3 mx-auto">
+                            <div className="row">
+                                <div className="col-4 pl-1 col-md-6 mx-auto">
+                                    <Modal padding="px-3" handleFormSubmit={handleBudget} buttonName="Edit budget" title="Budget">
+                                        <Input>Enter Your Budget</Input>
+                                    </Modal>
+                                </div>
+                            </div>
+                            <div className="row">
+                                <div className="col-4 col-md-6 mx-auto">
+                                    <p className="budget text-center mb-0">My Budget: <br /><span className="budget-content">${budget}</span></p>
+                                    <p className="budget text-center">Money Left: <br /><span className="budget-content">${(parseFloat(budget) - expenses).toFixed(2)}</span></p>
+                                </div>
+                            </div>
                         </div>
+                        <div id="table" className="col-md-9 mx-auto">
+                            <Table
+                                deleteSub={deleteSub}
+                                handleInputChange={handleInputChange}
+                                handleFormSubmit={handleFormSubmit}
+                                startDate={startDate}
+                                setStartDate={setStartDate}
+                                dueDate={dueDate}
+                                setDueDate={setDueDate}
+                                subs={subs} />
+                        </div>
+
                     </div>
                 </div>
-                <div className="row">
-                    <div id="table" className="col-md-6 mx-auto">
-                        <Table
-                            deleteSub={deleteSub}
-                            handleInputChange={handleInputChange}
-                            handleFormSubmit={handleFormSubmit}
-                            startDate={startDate}
-                            setStartDate={setStartDate}
-                            dueDate={dueDate}
-                            setDueDate={setDueDate}
-                            subs={subs} />
-                    </div>
-                </div>
+                <ul className="bg-bubbles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
             </div>
-            <ul className="bg-bubbles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+            <div className="container"> FOOTER GOES HERE</div>
+        </>
     )
 }
 
