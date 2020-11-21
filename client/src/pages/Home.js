@@ -1,10 +1,10 @@
 import React from "react";
-import FullPageIntroWithFixedTransparentNavbarx  from "../components/HeroNav"
+import VideoBackgroundPage  from "../components/VideoBackgroundPage"
 
 function Home() {
     return (
         <div>
-            <FullPageIntroWithFixedTransparentNavbarx />
+            <VideoBackgroundPage />
         </div>
         
 

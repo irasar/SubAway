@@ -1,37 +1,53 @@
 #videobackground .gradient {
-    background: -moz-linear-gradient(45deg, 
-    rgba(47, 199, 237, 1.0),
-     rgba(23, 87, 26, 1.0) 100%);
-    background: -webkit-linear-gradient(45deg,
-    rgba(47, 199, 237, 1.0),
-     rgba(23, 87, 26, 1.0) 100%);
-    background:  radial-gradient( circle farthest-corner at 1.1% 96%, rgba(3,114,223,1) 0%, rgba(14,227,192,1) 90% );
+  background: -moz-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
+  background: radial-gradient( circle farthest-corner at 8.8% 14.2%, rgba(2, 113, 75, 0.9) 21.9%, rgba(255, 255, 255, 0.7) 90%);
 }
 
-    
-    #videobackground .view video {
-    top: 0!important;
-    left: 0!important;
-    transform: none!important;
-    height: 100vh;
-    }
+#videobackground .view video {
+  top: 0!important;
+  left: 0!important;
+  transform: none!important;
+  height: 100vh;
+}
+
 .welcome {
   font-weight: bolder;
   font-size: 70px;
 }
+
 .secondWelcome {
   font-weight: bolder;
   margin-bottom: 40px;
 }
+
+.headers {
+  font-family: 'Ubuntu', sans-serif;
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.sub-content {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.budget-content {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
 #navStyle {
   color: white;
   font-weight: bolder;
   font-size: 20px;
   border-right: 2px solid whitesmoke;
   padding: 5px;
-
-
 }
+
 #navStyleP {
   color: white;
   font-weight: bolder;
@@ -40,10 +56,79 @@
 }
 
 #table {
-  box-shadow:  darkgray 2px 2px 20px 5px;
+  box-shadow: darkgray 2px 2px 20px 5px;
 }
 
-#my-subs {
+.my-subs {
   font-family: 'Ubuntu', sans-serif;
   color: whitesmoke;
+  font-weight: 500;
+}
+
+.budget {
+  font-family: 'Ubuntu', sans-serif;
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.members-stuff {
+  margin-top: 150px;
+}
+
+.sub-btn {
+  width: 50%;
+}
+
+.due-date {
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  p {
+    font-size: 60%;
+  }
+
+  .sub-btn {
+    height: 30%;
+    width: 30%;
+    position: relative;
+  }
+
+  .sub-icons {
+    position: absolute;
+    bottom: 1px;
+    right: 3px;
+  }
+
+  .budget-content {
+  font-size: 15px;
+}
+
+  .budget {
+    font-size: 15px;
+  }
+
+  .members-stuff {
+    margin-top: 70px;
+  }
+
+  .price {
+    padding-left: 10px;
+  }
+
+  .due-date {
+    margin-left: 10px;
+  }
+
+  .start-date {
+    margin-left: -10px;
+  }
+
+  .my-subs {
+    font-family: 'Ubuntu', sans-serif;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 25px;
+  }
 }
