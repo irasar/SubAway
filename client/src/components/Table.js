@@ -3,22 +3,10 @@ import { MDBBtn } from 'mdbreact';
 import moment from "moment";
 import Modal from "./Modal";
 import Form from "../components/Form";
+import SubRow from "./SubRow";
 
 function Table({ subs, handleFormSubmit, handleInputChange, startDate,
     setStartDate, dueDate, setDueDate, deleteSub }) {
-
-    function showModal(id) {
-        console.log("you clicked " + id);
-        return (
-            <Modal handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName="+">
-                <Form handleInputChange={handleInputChange}
-                    startDate={startDate}
-                    setStartDate={setStartDate}
-                    dueDate={dueDate}
-                    setDueDate={setDueDate} />
-            </Modal>
-        )
-    }
 
     return (
         <div>
@@ -44,13 +32,13 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                 <div className="col pr-0 start-date headers"><p>Start Date</p></div>
                 <div className="col pl-0 due-date headers"><p>Due Date</p></div>
             </div>
-            {subs.slice(0).reverse().map(sub => (
-                <div key={sub._id} className="row mb-1">
+            {subs.map(sub => (
+                <SubRow key={sub._id} sub={sub}>
                     <div className="col-2 col-md-3 pt-1 sub-content"><p>{sub.title}</p></div>
                     <div className="col-3 col-md-2 text-center pt-1 sub-content"><p>{sub.type}</p></div>
                     <div className="col-2 pt-1 sub-content"><p>${sub.amount}</p></div>
                     <div className="col-2 pt-1 sub-content pl-1 pl-md-3"><p>{sub.startDate}</p></div>
-                    <div className="col-2 pt-1 sub-content pr-0 text-center"><p>{moment(sub.dueDate).from(moment())}</p></div>
+                    <div className="col-2 pt-1 sub-content pr-0 text-center"><p>{moment(sub.dueDate).fromNow()}</p></div>
                     <div className="col-1 pl-0 pr-0">
                         <MDBBtn outline rounded size="sm" color="white" className="px-2 my-0 sub-btn">
                             <i className="fas fa-pencil-alt sub-icons"></i>
@@ -59,7 +47,7 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                             <i className="fas fa-trash-alt sub-icons"></i>
                         </MDBBtn>
                     </div>
-                </div>
+                </SubRow>
             ))}
         </div>
     );
