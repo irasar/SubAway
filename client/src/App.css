@@ -5,7 +5,7 @@ a {
 #videobackground .gradient {
   background: -moz-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
   background: -webkit-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
-  background: radial-gradient( circle farthest-corner at 8.8% 14.2%, rgba(2, 113, 75, 0.9) 21.9%, rgba(255, 255, 255, 0.7) 90%);
+  background: radial-gradient( circle farthest-corner at 49.4% 4.5%, #a099bf 0%, rgba(0,16,14,1) 92.8% );
 }
 
 #videobackground .view video {
