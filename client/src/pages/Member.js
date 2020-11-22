@@ -3,11 +3,9 @@ import Navbar from "../components/Navbar";
 import API from "../utils/API";
 import { useAuth0 } from "@auth0/auth0-react";
 import Modal from "../components/Modal";
-import TablePage from "../components/TablePage";
 import Table from "../components/Table";
 import moment from "moment";
 import Input from "../components/Input";
-import CoolBackground from "../components/CoolBackground";
 import "./Member.css"
 
 
@@ -107,7 +105,6 @@ function Member() {
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formInput.title && formInput.type && formInput.amount) {
-            console.log(moment(dueDate).diff(moment(), "days"));
             API.createSub(
                 {
                     title: formInput.title,
@@ -137,7 +134,7 @@ function Member() {
                         <div className="col-md-3 mx-auto">
                             <div className="row">
                                 <div className="col-4 pl-1 col-md-6 mx-auto">
-                                    <Modal padding="px-3" handleFormSubmit={handleBudget} buttonName="Edit budget" title="Budget">
+                                    <Modal padding="px-3" handleFormSubmit={handleBudget} buttonName="Edit Budget" title="Budget">
                                         <Input>Enter Your Budget</Input>
                                     </Modal>
                                 </div>
@@ -145,7 +142,7 @@ function Member() {
                             <div className="row">
                                 <div className="col-4 col-md-6 mx-auto">
                                     <p className="budget text-center mb-0">My Budget: <br /><span className="budget-content">${budget}</span></p>
-                                    <p className="budget text-center">Money Left: <br /><span className="budget-content">${(parseFloat(budget) - expenses).toFixed(2)}</span></p>
+                                    <p className="budget text-center">Budget Left: <br /><span className="budget-content">${(parseFloat(budget) - expenses).toFixed(2)}</span></p>
                                 </div>
                             </div>
                         </div>

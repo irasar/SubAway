@@ -28,7 +28,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findUser: function (req, res) {
-        console.log("finding user");
         db.User.findOne({ auth0ID: req.params.id })
             .then(user => {
                 res.json(user)
@@ -36,13 +35,11 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     createUser: function (req, res) {
-        console.log("creating user");
         db.User.create(req.body)
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));
     },
     updateBudget: function (req, res) {
-        console.log("updated user");
         db.User.findOneAndUpdate({auth0ID: req.body.auth0ID}, {budget: req.body.budget})
             .then(user => res.json(user))
             .catch(err => res.status(422).json(err));

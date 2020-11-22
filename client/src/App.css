@@ -1,3 +1,7 @@
+a {
+  color: whitesmoke;
+}
+
 #videobackground .gradient {
   background: -moz-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
   background: -webkit-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
@@ -32,6 +36,7 @@
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   font-weight: 400;
+  color: whitesmoke;
 }
 
 .budget-content {

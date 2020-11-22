@@ -33,12 +33,12 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                 <div className="col pl-0 due-date headers"><p>Due Date</p></div>
             </div>
             {subs.map(sub => (
-                <SubRow key={sub.id} sub={sub}>
+                <SubRow key={sub._id} sub={sub}>
                     <div className="col-2 col-md-3 pt-1 sub-content"><p>{sub.title}</p></div>
                     <div className="col-3 col-md-2 text-center pt-1 sub-content"><p>{sub.type}</p></div>
                     <div className="col-2 pt-1 sub-content"><p>${sub.amount}</p></div>
                     <div className="col-2 pt-1 sub-content pl-1 pl-md-3"><p>{sub.startDate}</p></div>
-                    <div className="col-2 pt-1 sub-content pr-0 text-center"><p>{moment(sub.dueDate).toNow()}</p></div>
+                    <div className="col-2 pt-1 sub-content pr-0 text-center"><p>{moment(sub.dueDate).fromNow()}</p></div>
                     <div className="col-1 pl-0 pr-0">
                         <MDBBtn outline rounded size="sm" color="white" className="px-2 my-0 sub-btn">
                             <i className="fas fa-pencil-alt sub-icons"></i>
