@@ -49,11 +49,9 @@ class VideoBackgroundPage extends React.Component {
                     <h3 className="mb-4">
                       Where we manage your subscriptions so you dont have to.
                     </h3>
-
-                    <MDBBtn outline color="white">
-                      {/* Get Started */}
-                      <a href="http://localhost:3000/member">GET STARTED</a>
-                    </MDBBtn>
+                    <a href="http://localhost:3000/member">
+                      <MDBBtn outline color="white">Get Started</MDBBtn>
+                      </a>
                   </MDBAnimation>
                 </MDBCol>
 

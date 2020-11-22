@@ -5,7 +5,7 @@ a {
 #videobackground .gradient {
   background: -moz-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
   background: -webkit-linear-gradient(45deg, rgba(47, 199, 237, 1.0), rgba(23, 87, 26, 1.0) 100%);
-  background: radial-gradient( circle farthest-corner at 8.8% 14.2%, rgba(2, 113, 75, 0.9) 21.9%, rgba(255, 255, 255, 0.7) 90%);
+  background: linear-gradient(to bottom right, rgb(0, 105, 209) 0%, rgb(255, 255, 255) 92.8%);
 }
 
 #videobackground .view video {
@@ -36,7 +36,8 @@ a {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: whitesmoke;
+  color: black;
+  opacity: 100%;
 }
 
 .budget-content {
@@ -61,13 +62,13 @@ a {
 }
 
 #table {
-  box-shadow: darkgray 2px 2px 20px 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .my-subs {
-  font-family: 'Ubuntu', sans-serif;
-  color: whitesmoke;
-  font-weight: 500;
+  font-family: 'Noto Sans', sans-serif;
+  color: black;
+  font-weight: 700;
 }
 
 .budget {
@@ -75,6 +76,14 @@ a {
   color: whitesmoke;
   font-weight: 500;
   font-size: 20px;
+}
+
+.icons {
+  font-size: 30px;
+}
+
+.sub-icons {
+  color: black;
 }
 
 .members-stuff {
@@ -93,47 +102,38 @@ a {
   p {
     font-size: 60%;
   }
-
   .sub-btn {
     height: 30%;
     width: 30%;
     position: relative;
   }
-
+  .icons {
+    font-size: 20px;
+  }
   .sub-icons {
     position: absolute;
     bottom: 1px;
     right: 3px;
   }
-
   .budget-content {
-  font-size: 15px;
-}
-
+    font-size: 15px;
+  }
   .budget {
     font-size: 15px;
   }
-
   .members-stuff {
     margin-top: 70px;
   }
-
   .price {
     padding-left: 10px;
   }
-
   .due-date {
     margin-left: 10px;
   }
-
   .start-date {
     margin-left: -10px;
   }
-
   .my-subs {
-    font-family: 'Ubuntu', sans-serif;
-    color: whitesmoke;
-    font-weight: 500;
     font-size: 25px;
   }
 }

@@ -140,7 +140,7 @@ function Member() {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4 col-md-6 mx-auto">
+                                <div className="col mx-auto">
                                     <p className="budget text-center mb-0">My Budget: <br /><span className="budget-content">${budget}</span></p>
                                     <p className="budget text-center">Budget Left: <br /><span className="budget-content">${(parseFloat(budget) - expenses).toFixed(2)}</span></p>
                                 </div>
