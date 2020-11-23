@@ -12,5 +12,4 @@ const Input = ({ children }) => {
     </div>
   );
 }
-
 export default Input;

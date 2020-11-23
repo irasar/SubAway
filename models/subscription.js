@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+// subscription schema
 const subscriptionSchema = new Schema({
     title: {
         type: String,

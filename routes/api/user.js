@@ -5,7 +5,6 @@ const subscriptionsController = require("../../controllers/subscriptionControlle
 router.route("/")
   .post(subscriptionsController.createUser)
   .put(subscriptionsController.updateBudget);
-
 // Matches with "/api/user/:id"
 router.route("/:id")
   .get(subscriptionsController.findUser)

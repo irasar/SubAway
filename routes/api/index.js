@@ -5,11 +5,10 @@ const userRoutes = require("./user");
 
 // Subscription routes
 router.use("/subscriptions", subscriptionsRoutes);
-//User routes
+// User routes
 router.use("/user", userRoutes);
-
-
-router.use(function(req, res){
+// If no API routes are hit, send the React app
+router.use(function (req, res) {
     res.sendFile(path.join(__dirname, "../../client/public/index.html"))
 });
 

@@ -1,9 +1,8 @@
 import React from 'react';
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink } from 'mdbreact';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem } from 'mdbreact';
 import logoi from "../images/logo-subaway.png";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
-
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -14,13 +13,11 @@ class Navbar extends React.Component {
     };
     this.onClick = this.onClick.bind(this);
   }
-
   onClick() {
     this.setState({
       collapse: !this.state.collapse,
     });
   }
-
   render() {
     return (
       <header>
@@ -46,5 +43,4 @@ class Navbar extends React.Component {
     );
   }
 }
-
 export default Navbar;
