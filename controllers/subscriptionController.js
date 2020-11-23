@@ -12,7 +12,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     createSub: function (req, res) {
-        console.log(req.body);
         db.Subscription.create(req.body)
             .then(subscriptions => res.json(subscriptions))
             .catch(err => res.status(422).json(err));

@@ -51,7 +51,6 @@ function Member() {
     }
     
     function getUser(id) {
-        console.log(id);
         API.findUser(id)
             .then(res => {
                 // create user if not found in db
