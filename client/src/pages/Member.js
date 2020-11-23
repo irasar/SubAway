@@ -49,11 +49,12 @@ function Member() {
             })
             .catch(err => console.log(err));
     }
-    // create user if not found in db
+    
     function getUser(id) {
         console.log(id);
         API.findUser(id)
             .then(res => {
+                // create user if not found in db
                 if (res.data === null) {
                     createUser({ auth0ID: id, budget: budget })
                 }
