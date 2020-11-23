@@ -7,15 +7,11 @@ import Loading from "./components/loading";
 import PrivateRoute from "./components/private-route";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 function App() {
-
   const { isLoading } = useAuth0();
-
   if (isLoading) {
     return <Loading />;
   }
-
   return (
     <Router>
       <Switch>
@@ -27,5 +23,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

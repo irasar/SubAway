@@ -10,5 +10,4 @@ const PrivateRoute = ({ component, ...args }) => (
         })}
         {...args} />
 );
-
 export default PrivateRoute;

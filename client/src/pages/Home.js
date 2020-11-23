@@ -6,10 +6,6 @@ function Home() {
         <div>
             <VideoBackgroundPage />
         </div>
-        
-
-
     )
 }
-
 export default Home;

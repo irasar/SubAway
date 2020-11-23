@@ -4,18 +4,15 @@ import moment from "moment";
 import Modal from "./Modal";
 import Form from "../components/Form";
 import SubRow from "./SubRow";
-import SubTitle from "./SubTitle"
 
 function Table({ subs, handleFormSubmit, handleInputChange, startDate,
     setStartDate, dueDate, setDueDate, deleteSub }) {
-
     const border = {
         borderTopStyle: "solid",
         borderLeftStyle: "solid",
         borderWidth: "3px",
         borderColor: "#DCDCDC"
     }
-
     return (
         <div>
             <div style={border} className="row rounded-lg py-2 bg-white">
@@ -32,7 +29,6 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
                     <h1 className="my-subs">Your Subscriptions</h1>
                 </div>
             </div>
-
             <div className="row mt-4">
                 <div className="col-2 offset-1 col-md-3 headers"><p>Name</p></div>
                 <div className="col-2 col-md-1 ml-md-3 headers"><p>Type</p></div>
@@ -56,5 +52,4 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
         </div>
     );
 }
-
 export default Table;

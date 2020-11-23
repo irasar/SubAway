@@ -8,7 +8,6 @@ import moment from "moment";
 import Input from "../components/Input";
 import "./Member.css"
 
-
 function Member() {
     const [subs, setSubs] = useState([]);
     const [formInput, setFormInput] = useState({ type: "Streaming" });
@@ -18,14 +17,15 @@ function Member() {
     const [budget, setBudget] = useState(0);
     const [expenses, setExpenses] = useState(0);
 
-
     useEffect(() => {
         if (isAuthenticated) {
+            // when user is logged in, get subs that belong to the user
             getSubs();
+            // get user info from db
             getUser(user.sub);
         }
     }, [isAuthenticated])
-
+    // when subs change, add all of the subs' prices
     useEffect(() => {
         addExpenses();
     }, [subs])
@@ -33,9 +33,11 @@ function Member() {
     function addExpenses() {
         const newExpenses = [];
         let total = 0;
+        // add all sub prices to an array
         subs.forEach(sub => {
             newExpenses.push(parseFloat(sub.amount))
         });
+        // add all of the prices together
         total = newExpenses.reduce((a, b) => a + b, 0);
         setExpenses(total);
     }
@@ -43,12 +45,11 @@ function Member() {
     function createUser(id) {
         API.createUser(id)
             .then(res => {
-                console.log("created user " + res.data.auth0ID);
                 setBudget(res.data.budget);
             })
             .catch(err => console.log(err));
     }
-
+    // create user if not found in db
     function getUser(id) {
         console.log(id);
         API.findUser(id)
@@ -57,51 +58,44 @@ function Member() {
                     createUser({ auth0ID: id, budget: budget })
                 }
                 else {
-                    console.log("found user " + res.data.auth0ID)
                     setBudget(res.data.budget);
                 }
             })
             .catch(err => console.log(err));
     }
-
     function getSubs() {
         API.findAllSubs(user.sub)
             .then(res => {
+                // sort subs by date
                 sortDates(res.data);
             })
             .catch(err => console.log(err));
     };
-
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormInput({ ...formInput, [name]: value })
     };
-
     function deleteSub(id) {
         API.removeSub(id)
             .then(res => getSubs())
             .catch(err => console.log(err));
     }
-
     function handleBudget(event) {
         event.preventDefault();
         setBudget(document.getElementById("formGroupExampleInput").value)
         updateBudget(document.getElementById("formGroupExampleInput").value);
     }
-
     function updateBudget(newBudget) {
-        console.log(user.sub + " " + newBudget);
         API.updateUser({ auth0ID: user.sub, budget: newBudget })
             .then(res => console.log("updated budget"))
             .catch(err => console.log(err));
     }
-
     function sortDates(data) {
         const tempArray = data;
+        //sorting sub dates by due dates
         const sortedArray = tempArray.sort((a, b) => new moment(a.dueDate).format('YYYYMMDD') - new moment(b.dueDate).format('YYYYMMDD'))
         setSubs(sortedArray);
     }
-
     function handleFormSubmit(event) {
         event.preventDefault();
         if (formInput.title && formInput.type && formInput.amount) {
@@ -122,9 +116,6 @@ function Member() {
             alert("Please answer all of the questions");
         };
     }
-
-
-
     return (
         <>
             <div className="lol">
@@ -157,7 +148,6 @@ function Member() {
                                 setDueDate={setDueDate}
                                 subs={subs} />
                         </div>
-
                     </div>
                 </div>
                 <ul className="bg-bubbles">
@@ -172,11 +162,8 @@ function Member() {
                     <li></li>
                     <li></li>
                 </ul>
-
             </div>
-            <div className="container"> FOOTER GOES HERE</div>
         </>
     )
 }
-
 export default Member;

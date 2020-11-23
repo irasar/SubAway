@@ -2,7 +2,6 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
 function Form({ handleInputChange, startDate, setStartDate, dueDate, setDueDate }) {
   return (
     <>
@@ -27,5 +26,4 @@ function Form({ handleInputChange, startDate, setStartDate, dueDate, setDueDate 
     </>
   );
 };
-
 export default Form;
