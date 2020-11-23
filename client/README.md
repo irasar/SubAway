@@ -1,3 +1,5 @@
+# SubAway
+
 ## Description 
 
 
@@ -31,9 +33,9 @@ To install use the following command:<br>
 
 Run: <pre><code>npm start</pre></code><br>
 
-![](React App.gif)
-![](React App (3).gif)
-![](React App (2).gif)
+![gif1](gif1.gif)
+![gif2](gif2.gif)
+![gif3](gif3.gif)
 
 ## Technologies Used
 
