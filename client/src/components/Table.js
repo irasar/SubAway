@@ -17,7 +17,7 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
         <div>
             <div style={border} className="row rounded-lg py-2 bg-white">
                 <div className="col-2">
-                    <Modal padding="p-1" handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName={<i className="fas fa-plus "></i>}>
+                    <Modal padding="p-1" handleFormSubmit={handleFormSubmit} title="New Subscription" buttonName={<i className="fas fa-plus p-2"></i>}>
                         <Form handleInputChange={handleInputChange}
                             startDate={startDate}
                             setStartDate={setStartDate}
