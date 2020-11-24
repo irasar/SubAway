@@ -49,19 +49,22 @@ function Member() {
             })
             .catch(err => console.log(err));
     }
-    
+
     function getUser(id) {
         API.findUser(id)
             .then(res => {
                 // create user if not found in db
                 if (res.data === null) {
-                    createUser({ auth0ID: id, budget: budget })
+                    createUser({ auth0ID: id, budget: budget });
                 }
                 else {
                     setBudget(res.data.budget);
                 }
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                createUser({ auth0ID: id, budget: budget });
+                console.log(err);
+            });
     }
     function getSubs() {
         API.findAllSubs(user.sub)

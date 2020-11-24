@@ -18,8 +18,7 @@ ReactDOM.render(
     <Auth0Provider
     domain={domain}
     clientId={clientId}
-    redirectUri="https://subaway.herokuapp.com/member"
-    audience="https://subaway.herokuapp.com/">
+    redirectUri="https://subaway.herokuapp.com/member">
         <App />
     </Auth0Provider>,
     document.getElementById("root"));
