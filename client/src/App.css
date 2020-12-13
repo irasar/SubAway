@@ -37,7 +37,10 @@ a {
   font-size: 20px;
   font-weight: 400;
   color: black;
-  opacity: 100%;
+}
+
+.table-content {
+  margin-bottom: 10px;
 }
 
 .budget-content {

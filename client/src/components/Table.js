@@ -38,10 +38,10 @@ function Table({ subs, handleFormSubmit, handleInputChange, startDate,
             </div>
             {subs.map(sub => (
                 <SubRow key={sub._id} sub={sub}>
-                    <div className="col-2 col-md-2 pt-1 sub-content my-auto"><p>{sub.type}</p></div>
-                    <div className="col-2 col-md-1 pt-1 pr-0 text-center sub-content my-auto"><p>${sub.amount}</p></div>
-                    <div className="col-2 pt-1 sub-content pl-1 pl-md-3 pr-md-0 text-right my-auto"><p>{sub.startDate}</p></div>
-                    <div className="col-2 pt-1 sub-content pr-0 text-center my-auto"><p>{moment(sub.dueDate).fromNow()}</p></div>
+                    <div className="col-2 col-md-2 pt-1 sub-content my-auto"><p className="table-content">{sub.type}</p></div>
+                    <div className="col-2 col-md-1 pt-1 pr-0 text-center sub-content my-auto"><p className="table-content">${sub.amount}</p></div>
+                    <div className="col-2 pt-1 sub-content pl-1 pl-md-3 pr-md-0 text-right my-auto"><p className="table-content">{sub.startDate}</p></div>
+                    <div className="col-2 pt-1 sub-content pr-0 text-center my-auto"><p className="table-content">{moment(sub.dueDate).fromNow()}</p></div>
                     <div className="col-1 px-0 pt-1">
                         <MDBBtn onClick={() => deleteSub(sub._id)} outline rounded size="sm" color="white" className="px-2 my-0 sub-btn">
                             <i className="fas fa-trash-alt sub-icons"></i>

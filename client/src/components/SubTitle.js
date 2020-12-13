@@ -9,7 +9,7 @@ function SubTitle({ title, fontColor }) {
                     <i style={fontColor} className="far fa-calendar-check icons"></i>
                 </div>
                 <div className="col-2 my-auto col-md-3 pt-1 sub-content">
-                    <p>{title}</p>
+                    <p className="table-content">{title}</p>
                 </div>
             </>
         )
@@ -21,7 +21,7 @@ function SubTitle({ title, fontColor }) {
                     <i style={fontColor} className="fas fa-exclamation icons"></i>
                 </div>
                 <div className="col-2 my-auto col-md-3 pt-1 sub-content">
-                    <p>{title}</p>
+                    <p className="table-content">{title}</p>
                 </div>
             </>
         )
@@ -32,7 +32,7 @@ function SubTitle({ title, fontColor }) {
                 <i style={fontColor} className="fas fa-exclamation-triangle icons"></i>
             </div>
             <div className="col-2 my-auto col-md-3 pt-1 sub-content">
-                <p>{title}</p>
+                <p className="table-content">{title}</p>
             </div>
         </>
     )
