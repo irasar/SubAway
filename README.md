@@ -1,29 +1,72 @@
-# Create React Express App
+# SubAway
 
-## About This Boilerplate
+## Description 
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
+The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
 
-```
-npm install
-```
+At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here.
 
-This should install node modules within the server and the client folder.
+If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
 
-After both installations complete, run the following command in your terminal:
+If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
 
-```
-npm start
-```
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Table of Contents
 
-## Deployment (Heroku)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
+## Installation
+
+
+To install use the following command:<br>
+<pre><code>npm i</pre></code>
+
+## Usage 
+
+Run: <pre><code>npm start</pre></code><br>
+
+![gif1](gif1.gif)
+![gif2](gif2.gif)
+![gif3](gif3.gif)
+
+## Technologies Used
+
+* MERN stack
+* Auth0
+* Axios
+* React Datepicker
+* Moment.js
+* HTML
+* CSS (MDBootstrap & Bootstrap)
+
+## Credits
+
+Christian Marquez - https://github.com/tiroxxx <br>
+
+Sarah Iraurgui - https://github.com/irasar
+
+
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Badges
+
+
+
+
+## Contributing
+
+Contributions in the form of issues and pull requests are welcomed and encouraged.
+
+
+
