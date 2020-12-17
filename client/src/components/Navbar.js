@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem } from 'mdbreact';
 import logoi from "../images/logo-subaway.png";
 import LoginButton from "./LoginButton";
@@ -29,10 +30,10 @@ class Navbar extends React.Component {
           <MDBCollapse isOpen={this.state.collapse} navbar>
             <MDBNavbarNav left>
               <MDBNavItem active>
-                <a id="navStyle" href="/">Home</a>
+                <Link id="navStyle" to="/">Home</Link>
               </MDBNavItem>
               <MDBNavItem active>
-                <a id="navStyle" href="/member">Member</a>
+                <Link id="navStyle" to="/member">Member</Link>
               </MDBNavItem>
               <LogoutButton />
               <LoginButton />

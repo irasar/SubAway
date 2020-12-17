@@ -105,6 +105,9 @@ a {
   p {
     font-size: 60%;
   }
+  .home-content {
+    margin-top: 40%;
+  }
   .sub-btn {
     height: 30%;
     width: 30%;
