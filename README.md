@@ -33,9 +33,9 @@ To install use the following command:<br>
 
 Run: <pre><code>npm start</pre></code><br>
 
-![gif1](gif1.gif)
-![gif2](gif2.gif)
-![gif3](gif3.gif)
+![gif1](./client/src/images/gif1.gif)
+![gif2](./client/src/images/gif2.gif)
+![gif3](./client/src/images/gif3.gif)
 
 ## Technologies Used
 
