@@ -5,17 +5,7 @@ https://subaway.herokuapp.com/
 ## Description 
 
 
-
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
-
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? If your project has a lot of features, consider adding a heading called "Features" and listing them here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
+Are you tired of overpaying for forgotten, overdue subscriptions? SubAway is the app for you! SubAway is a MERN stack subscription service manager, that allows users to track all of their subscriptions right in one place. Upon logging in, the user will be able to disclose the amount of money they would like to spend, with our budgeting system. They are then able to start adding their many subscriptions. These subscriptions will be displayed in order of severity, with the closes due shown at the top. We ultilized React Datepicker and Moment.js to create this feature. The subscriptions are also colorcoded green, yellow, and red to further help the user manage their services. You are also able to delete unwanted subscripions from your list. SubAway is a responsive application so you can enjoy it on a variety of devices.
 
 ## Table of Contents
 
@@ -60,10 +50,6 @@ Sarah Iraurgui - https://github.com/irasar
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-## Badges
-
-
 
 
 ## Contributing
