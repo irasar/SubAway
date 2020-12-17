@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MDBAnimation, MDBMask, MDBRow, MDBCol, MDBBtn, MDBView, MDBContainer } from "mdbreact";
 import Navbar from "./Navbar";
 
@@ -19,12 +19,10 @@ class VideoBackgroundPage extends React.Component {
     );
     return (
       <div id="videobackground">
-        <Router>
-          <div>
-            <Navbar />
-            {this.state.collapseID && overlay}
-          </div>
-        </Router>
+        <div>
+          <Navbar />
+          {this.state.collapseID && overlay}
+        </div>
         <MDBView>
           {/* home screen animation */}
           <video className="video-intro" playsInline
@@ -33,7 +31,7 @@ class VideoBackgroundPage extends React.Component {
           </video>
           <MDBMask className="d-flex justify-content-center align-items-center gradient">
             <MDBContainer>
-              <MDBRow>
+              <MDBRow className="home-content">
                 <MDBCol
                   md="6"
                   className="white-text text-center text-md-left mt-xl-5 mb-5">
@@ -42,12 +40,12 @@ class VideoBackgroundPage extends React.Component {
                       Welcome to SubAway
                     </h1>
                     <hr className="hr-light" />
-                    <h3 className="mb-4">
-                      Where we manage your subscriptions so you dont have to.
+                    <h3 className="h3-responsive mb-4">
+                      Where we manage your subscriptions so you dont have to
                     </h3>
-                    <a href="http://localhost:3000/member">
+                    <Link to="/member">
                       <MDBBtn outline color="white">Get Started</MDBBtn>
-                    </a>
+                    </Link>
                   </MDBAnimation>
                 </MDBCol>
                 <MDBCol md="6" xl="5" className="mt-xl-5">
